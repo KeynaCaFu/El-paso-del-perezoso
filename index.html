@@ -4,136 +4,316 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Paso del Perezoso - Cabaña Rústica</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .hero-bg {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+        :root {
+            --color-primary: #1e5631;
+            --color-primary-light: #2a7d46;
+            --color-primary-dark: #164323;
+            --color-accent: #a4de02;
+            --color-light: #f8f9fa;
+            --color-dark: #212529;
         }
         
-        /* Estilos para el menú móvil */
-        .mobile-menu {
-            display: none;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
         }
         
+        .navbar {
+            background-color: var(--color-primary);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .navbar-brand img {
+            border: 2px solid white;
+        }
+        
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: var(--color-accent) !important;
+        }
+        
+        .hero-section {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/imagen1.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+        
+        .btn-primary {
+            background-color: var(--color-primary);
+            border-color: var(--color-primary);
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--color-primary-light);
+            border-color: var(--color-primary-light);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline-light:hover {
+            background-color: white;
+            color: var(--color-primary);
+        }
+        
+        .section-title {
+            color: var(--color-primary);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--color-accent);
+        }
+        
+        .feature-icon {
+            background-color: rgba(30, 86, 49, 0.1);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            color: var(--color-primary);
+            font-size: 1.5rem;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-img-top {
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .nature-card {
+            text-align: center;
+            padding: 2rem 1rem;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .nature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .nature-icon {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
+            background-color: rgba(30, 86, 49, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: var(--color-primary);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: var(--color-primary);
+            color: white;
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--color-primary-light);
+            transform: translateY(-3px);
+        }
+        
+        .map-container {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+        
+        footer {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 2rem 0;
+        }
+        
+        .bg-light-green {
+            background-color: rgba(164, 222, 2, 0.1);
+        }
+        
+        /* Responsive adjustments */
         @media (max-width: 768px) {
-            .mobile-menu {
-                display: block;
+            .hero-section h1 {
+                font-size: 2.5rem;
             }
             
-            .desktop-menu {
-                display: none;
+            .hero-section p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
             }
         }
     </style>
 </head>
-<body class="bg-green-50">
-     <!-- Header  -->
-    <header class="bg-green-800 text-white shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-3">
-                    <img src="img/perezoso.jpg" alt="Perezoso" class="w-12 h-12 rounded-full object-cover">
-                    <h1 class="text-2xl md:text-3xl font-bold text-balance">El Paso del Perezoso</h1>
-                </div>
-                
-                <!-- Menú desktop -->
-                <nav class="desktop-menu hidden md:flex space-x-6">
-                    <a href="#inicio" class="hover:text-green-200 transition-colors">Inicio</a>
-                    <a href="#cabana" class="hover:text-green-200 transition-colors">La Cabaña</a>
-                    <a href="#habitaciones" class="hover:text-green-200 transition-colors">Habitaciones</a>
-                    <a href="#naturaleza" class="hover:text-green-200 transition-colors">Naturaleza</a>
-                    <a href="#contacto" class="hover:text-green-200 transition-colors">Contacto</a>
-                </nav>
-                
-                <!-- Botón menú móvil -->
-                <div class="mobile-menu md:hidden">
-                    <button id="menu-toggle" class="text-white focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- Menú móvil desplegable -->
-            <div id="mobile-menu-items" class="hidden mt-4 space-y-2 pb-4">
-                <a href="#inicio" class="block hover:text-green-200 transition-colors py-2">Inicio</a>
-                <a href="#cabana" class="block hover:text-green-200 transition-colors py-2">La Cabaña</a>
-                <a href="#habitaciones" class="block hover:text-green-200 transition-colors py-2">Habitaciones</a>
-                <a href="#naturaleza" class="block hover:text-green-200 transition-colors py-2">Naturaleza</a>
-                <a href="#contacto" class="block hover:text-green-200 transition-colors py-2">Contacto</a>
+<body>
+    <!-- Header & Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="img/perezoso.jpg" alt="Perezoso" class="rounded-circle me-2" width="50" height="50">
+                El Paso del Perezoso
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cabana">La Cabaña</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#habitaciones">Habitaciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#naturaleza">Naturaleza</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </header>
+    </nav>
 
-     <!-- Hero Section  -->
-    <section id="inicio" class="relative h-screen">
-        <div class="hero-bg absolute inset-0 bg-cover bg-center" style="background-image: url(img/imagen1.jpg)"></div>
-        <div class="relative z-10 flex items-center justify-center h-full text-center text-white px-4">
-            <div class="max-w-4xl">
-                <h2 class="text-4xl md:text-6xl font-bold mb-6 text-balance">Bienvenidos a El Paso del Perezoso</h2>
-                <p class="text-xl md:text-2xl mb-8 text-pretty">Una cabaña rústica perfecta para descansar, rodeada de naturaleza, lago y vida silvestre</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors">
-                        Reservar Hospedaje
-                    </button>
-                    <button class="bg-transparent border-2 border-white hover:bg-white hover:text-green-800 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors">
-                        Actividades de Día
-                    </button>
-                </div>
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-3 fw-bold mb-4">Bienvenidos a El Paso del Perezoso</h1>
+            <p class="lead mb-5">Una cabaña rústica perfecta para descansar, rodeada de naturaleza, lago y vida silvestre</p>
+            <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                <a href="#" class="btn btn-primary btn-lg">Reservar Hospedaje</a>
+                <a href="#" class="btn btn-outline-light btn-lg">Actividades de Día</a>
             </div>
         </div>
     </section>
 
-     <!-- Sobre la Cabaña  -->
-    <section id="cabana" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-4">Nuestra Cabaña Rústica</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto text-pretty">
+    <!-- Sobre la Cabaña -->
+    <section id="cabana" class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Nuestra Cabaña Rústica</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px;">
                     Una hermosa cabaña de dos pisos construida en madera, equipada con todo lo necesario para una estadía cómoda y memorable
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <img src="img/imagen1.jpg" alt="Vista exterior de la cabaña" class="rounded-lg shadow-lg w-full h-96 object-cover">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="img/imagen1.jpg" alt="Vista exterior de la cabaña" class="img-fluid rounded shadow">
                 </div>
-                <div class="space-y-6">
-                    <div class="flex items-start space-x-4">
-                        <div class="bg-green-100 p-3 rounded-full">
-                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                            </svg>
+                <div class="col-lg-6">
+                    <div class="d-flex mb-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-home"></i>
                         </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-green-800">Dos Pisos Cómodos</h3>
-                            <p class="text-gray-600">Un cuarto en la planta baja y una habitación grande en el segundo piso con dos camas matrimoniales</p>
+                        <div class="ms-4">
+                            <h3 class="h5">Dos Pisos Cómodos</h3>
+                            <p class="text-muted mb-0">Un cuarto en la planta baja y una habitación grande en el segundo piso con dos camas matrimoniales</p>
                         </div>
                     </div>
 
-                    <div class="flex items-start space-x-4">
-                        <div class="bg-green-100 p-3 rounded-full">
-                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                            </svg>
+                    <div class="d-flex mb-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-utensils"></i>
                         </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-green-800">Completamente Equipada</h3>
-                            <p class="text-gray-600">Cocina completa, abanicos, servicio y baño privado</p>
+                        <div class="ms-4">
+                            <h3 class="h5">Completamente Equipada</h3>
+                            <p class="text-muted mb-0">Cocina completa, abanicos, servicio y baño privado</p>
                         </div>
                     </div>
 
-                    <div class="flex items-start space-x-4">
-                        <div class="bg-green-100 p-3 rounded-full">
-                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                            </svg>
+                    <div class="d-flex">
+                        <div class="feature-icon">
+                            <i class="fas fa-water"></i>
                         </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-green-800">Vista al Lago</h3>
-                            <p class="text-gray-600">Sala con hermosa vista al lago, perfecta para relajarse y disfrutar la naturaleza</p>
+                        <div class="ms-4">
+                            <h3 class="h5">Vista al Lago</h3>
+                            <p class="text-muted mb-0">Sala con hermosa vista al lago, perfecta para relajarse y disfrutar la naturaleza</p>
                         </div>
                     </div>
                 </div>
@@ -141,265 +321,246 @@
         </div>
     </section>
 
-     <!-- Habitaciones  -->
-    <section id="habitaciones" class="py-16 bg-green-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-4">Habitaciones Cómodas</h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto text-pretty">
+    <!-- Habitaciones -->
+    <section id="habitaciones" class="py-5 bg-light-green">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Habitaciones Cómodas</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 600px;">
                     Espacios acogedores con auténtico estilo rústico y todas las comodidades necesarias
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="img/1756431130693.jpg" alt="Habitación principal" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-green-800 mb-2">Habitación Principal</h3>
-                        <p class="text-gray-600">Amplia habitación en el segundo piso con dos camas matrimoniales y ventanas con vista al jardín</p>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="img/1756431130693.jpg" class="card-img-top" alt="Habitación principal">
+                        <div class="card-body">
+                            <h3 class="h5 card-title">Habitación Principal</h3>
+                            <p class="card-text">Amplia habitación en el segundo piso con dos camas matrimoniales y ventanas con vista al jardín</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="img/1756431130718.jpg" alt="Vista nocturna habitación" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-green-800 mb-2">Ambiente Acogedor</h3>
-                        <p class="text-gray-600">Techos altos con vigas de madera y iluminación cálida para un descanso perfecto</p>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="img/1756431130718.jpg" class="card-img-top" alt="Vista nocturna habitación">
+                        <div class="card-body">
+                            <h3 class="h5 card-title">Ambiente Acogedor</h3>
+                            <p class="card-text">Techos altos con vigas de madera y iluminación cálida para un descanso perfecto</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="img/1756431130673.jpg" alt="Área de estar" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-green-800 mb-2">Área de Estar</h3>
-                        <p class="text-gray-600">Espacio adicional con muebles de madera y ventanas que conectan con la naturaleza</p>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="img/1756431130673.jpg" class="card-img-top" alt="Área de estar">
+                        <div class="card-body">
+                            <h3 class="h5 card-title">Área de Estar</h3>
+                            <p class="card-text">Espacio adicional con muebles de madera y ventanas que conectan con la naturaleza</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-     <!-- Terraza  -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-6">Terraza con Vista</h2>
-                    <p class="text-lg text-gray-600 mb-6 text-pretty">
+    <!-- Terraza -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="section-title text-start">Terraza con Vista</h2>
+                    <p class="text-muted mb-4">
                         Disfruta de nuestra amplia terraza cubierta con cómodas sillas coloridas, perfecta para relajarse 
                         mientras observas la naturaleza y escuchas los sonidos del lago.
                     </p>
-                    <ul class="space-y-3 text-gray-600">
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span>Sillas cómodas con colores vibrantes</span>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            Sillas cómodas con colores vibrantes
                         </li>
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span>Mesa de madera para comidas al aire libre</span>
+                        <li class="mb-2">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            Mesa de madera para comidas al aire libre
                         </li>
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span>Techo cubierto para protección</span>
+                        <li class="mb-2">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            Techo cubierto para protección
                         </li>
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span>Vista panorámica del jardín y lago</span>
+                        <li class="mb-2">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            Vista panorámica del jardín y lago
                         </li>
                     </ul>
                 </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <img src="img/1756431130649.jpg" alt="Terraza con sillas" class="rounded-lg shadow-lg w-full h-64 object-cover">
-                    <img src="img/1756431130649.jpg" alt="Vista desde terraza" class="rounded-lg shadow-lg w-full h-64 object-cover mt-8">
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <img src="img/1756431130649.jpg" alt="Terraza con sillas" class="img-fluid rounded shadow">
+                        </div>
+                        <div class="col-6">
+                            <img src="img/1756431130649.jpg" alt="Vista desde terraza" class="img-fluid rounded shadow mt-5">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Naturaleza -->
-    <section id="naturaleza" class="py-16 bg-green-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-4">Rodeado de Naturaleza</h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto text-pretty">
+    <section id="naturaleza" class="py-5 bg-light-green">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Rodeado de Naturaleza</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 600px;">
                     Sumérgete en un entorno natural único con diversidad de flora y fauna
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center">
-                    <div class="bg-green-100 rounded-full p-4 inline-flex mb-4">
-                        <svg class="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path>
-                        </svg>
+            <div class="row g-4">
+                <div class="col-md-4 text-center">
+                    <div class="nature-card h-100">
+                        <div class="nature-icon">
+                            <i class="fas fa-lake"></i>
+                        </div>
+                        <h3 class="h5">Lago Privado</h3>
+                        <p class="text-muted">Disfruta de un lago privado ideal para pescar, pasear en bote o simplemente contemplar</p>
                     </div>
-                    <h3 class="text-xl font-semibold text-green-800 mb-2">Lago Privado</h3>
-                    <p class="text-gray-600">Disfruta de un lago privado ideal para pescar, pasear en bote o simplemente contemplar</p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="bg-green-100 rounded-full p-4 inline-flex mb-4">
-                        <svg class="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                        </svg>
+                <div class="col-md-4 text-center">
+                    <div class="nature-card h-100">
+                        <div class="nature-icon">
+                            <i class="fas fa-hiking"></i>
+                        </div>
+                        <h3 class="h5">Senderos Naturales</h3>
+                        <p class="text-muted">Explora nuestros senderos rodeados de vegetación nativa y vida silvestre</p>
                     </div>
-                    <h3 class="text-xl font-semibold text-green-800 mb-2">Senderos Naturales</h3>
-                    <p class="text-gray-600">Explora nuestros senderos rodeados de vegetación nativa y vida silvestre</p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="bg-green-100 rounded-full p-4 inline-flex mb-4">
-                        <svg class="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
+                <div class="col-md-4 text-center">
+                    <div class="nature-card h-100">
+                        <div class="nature-icon">
+                            <i class="fas fa-dove"></i>
+                        </div>
+                        <h3 class="h5">Avistamiento de Aves</h3>
+                        <p class="text-muted">Observa diversas especies de aves en su hábitat natural</p>
                     </div>
-                    <h3 class="text-xl font-semibold text-green-800 mb-2">Avistamiento de Aves</h3>
-                    <p class="text-gray-600">Observa diversas especies de aves en su hábitat natural</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contacto -->
-    <section id="contacto" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-4">Contacto</h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto text-pretty">
+    <section id="contacto" class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Contacto</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 600px;">
                     Reserva tu estadía o solicita más información sobre nuestra cabaña
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-12">
-
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3 class="h5">Ubicación</h3>
+                            <p class="mb-1">
+                                <a href="https://www.google.com/maps/place/10°22'26.6%22N+83°43'35.4%22W/@10.3740556,-83.7268889,17z/data=!3m1!4b1!4m4!3m3!8m2!3d10.3740556!4d-83.7268889?entry=ttu" 
+                                   target="_blank" class="text-decoration-none text-muted">
+                                    Limón, Pococi, Cariari
+                                </a>
+                            </p>
+                            <p class="mb-0">
+                                <a href="https://www.google.com/maps/place/10°22'26.6%22N+83°43'35.4%22W/@10.3740556,-83.7268889,17z/data=!3m1!4b1!4m4!3m3!8m2!3d10.3740556!4d-83.7268889?entry=ttu" 
+                                   target="_blank" class="text-decoration-none text-muted">
+                                    Cabaña El Paso del Perezoso
+                                </a>
+                            </p>
+                            <small class="text-muted">(Haz clic para ver en Google Maps)</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3 class="h5">Teléfono</h3>
+                            <p class="mb-1">
+                                <a href="tel:+50688834349" class="text-decoration-none text-muted">+506 88834349</a>
+                            </p>
+                            <p class="mb-0">
+                                <a href="tel:+50686495759" class="text-decoration-none text-muted">+506 86495759</a>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3 class="h5">Email</h3>
+                            <p class="mb-0">
+                                <a href="mailto:elpasodelperezoso@gmail.com" class="text-decoration-none text-muted">elpasodelperezoso@gmail.com</a>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h3 class="h5 mb-3">Síguenos en redes sociales</h3>
+                        <div>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 
-                <div class="space-y-6">
-                    <div class="flex items-start space-x-4">
-                        <div class="bg-green-100 p-3 rounded-full">
-                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-green-800">Ubicación</h3>
-                            <a href="https://www.google.com/maps/place/10°22'26.6%22N+83°43'35.4%22W/@10.3740556,-83.7268889,17z/data=!3m1!4b1!4m4!3m3!8m2!3d10.3740556!4d-83.7268889?entry=ttu" 
-                               target="_blank" 
-                               class="text-gray-600 hover:text-green-700 transition-colors block">
-                                Limón, Pococi, Cariari
-                            </a>
-                            <a href="https://www.google.com/maps/place/10°22'26.6%22N+83°43'35.4%22W/@10.3740556,-83.7268889,17z/data=!3m1!4b1!4m4!3m3!8m2!3d10.3740556!4d-83.7268889?entry=ttu" 
-                               target="_blank" 
-                               class="text-gray-600 hover:text-green-700 transition-colors block">
-                                Cabaña El Paso del Perezoso
-                            </a>
-                            <p class="text-sm text-gray-500 mt-1">(Haz clic para ver en Google Maps)</p>
-                        </div>
+                <div class="col-lg-6">
+                    <h3 class="h5 mb-3">Encuéntranos</h3>
+                    <div class="map-container mb-3">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1166.7910535502629!2d-83.72699528923653!3d10.373700648152811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDIyJzI2LjYiTiA4M8KwNDMnMzUuNCJX!5e0!3m2!1ses-419!2scr!4v1756436003074!5m2!1ses-419!2scr" 
+                            width="100%" 
+                            height="300" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                        <a href="https://www.google.com/maps/place/10°22'26.6%22N+83°43'35.4%22W/@10.3740556,-83.7268889,17z/data=!3m1!4b1!4m4!3m3!8m2!3d10.3740556!4d-83.7268889?entry=ttu" 
+                           target="_blank" 
+                           class="map-overlay" 
+                           title="Abrir en Google Maps">
+                        </a>
                     </div>
-                    
-                    <div class="flex items-start space-x-4">
-                        <div class="bg-green-100 p-3 rounded-full">
-                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-green-800">Teléfono</h3>
-                            <p class="text-gray-600">
-                                <a href="tel:+50688834349" class="hover:text-green-700 transition-colors">+506 88834349</a>
-                            </p>
-                            <p class="text-gray-600">
-                                <a href="tel:+50686495759" class="hover:text-green-700 transition-colors">+506 86495759</a>
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start space-x-4">
-                        <div class="bg-green-100 p-3 rounded-full">
-                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-green-800">Email</h3>
-                            <p class="text-gray-600">
-                                <a href="mailto:elpasodelperezoso@gmail.com" class="hover:text-green-700 transition-colors">elpasodelperezoso@gmail.com</a>
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- Mapa de Google Maps con overlay clickeable -->
-                    <div class="pt-4 relative">
-                        <h3 class="text-xl font-semibold text-green-800 mb-4">Encuéntranos</h3>
-                        <div class="rounded-lg overflow-hidden shadow-lg relative">
-                            <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1166.7910535502629!2d-83.72699528923653!3d10.373700648152811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDIyJzI2LjYiTiA4M8KwNDMnMzUuNCJX!5e0!3m2!1ses-419!2scr!4v1756436003074!5m2!1ses-419!2scr" 
-                                width="100%" 
-                                height="250" 
-                                style="border:0;" 
-                                allowfullscreen="" 
-                                loading="lazy" 
-                                referrerpolicy="no-referrer-when-downgrade"
-                                class="w-full h-64">
-                            </iframe>
-                            <!-- Overlay transparente clickeable -->
-                            <a href="https://www.google.com/maps/place/10°22'26.6%22N+83°43'35.4%22W/@10.3740556,-83.7268889,17z/data=!3m1!4b1!4m4!3m3!8m2!3d10.3740556!4d-83.7268889?entry=ttu" 
-                               target="_blank" 
-                               class="absolute inset-0 cursor-pointer" 
-                               title="Abrir en Google Maps">
-                            </a>
-                        </div>
-                        <p class="text-sm text-gray-500 mt-2 text-center">Haz clic en el mapa para abrir en Google Maps</p>
-                    </div>
-                    
-                    <div class="pt-4">
-                        <h3 class="text-xl font-semibold text-green-800 mb-4">Síguenos en redes sociales</h3>
-                        <div class="flex space-x-4">
-                            <a href="#" class="bg-green-600 text-white p-3 rounded-full hover:bg-green-700 transition-colors">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                                </svg>
-                            </a>
-                            <a href="#" class="bg-green-600 text-white p-3 rounded-full hover:bg-green-700 transition-colors">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 2C6.477 2 2 6.477 2 12c0 5.523 4.477 10 10 10s10-4.477 10-10c0-5.523-4.477-10-10-10zm5.259 5.75c.31 0 .576.112.8.336.224.224.336.49.336.799 0 .31-.112.576-.336.8a1.09 1.09 0 01-.8.336 1.09 1.09 0 01-.799-.336 1.09 1.09 0 01-.336-.8c0-.31.112-.575.336-.799.224-.224.49-.336.8-.336zM12 18c-1.95 0-3.688-.694-5.212-2.081a7.577 7.577 0 01-2.288-5.044c.05-.8.225-1.55.525-2.25.3-.7.675-1.3 1.125-1.8.45-.5.950-.875 1.5-1.125s1.1-.375 1.675-.375c.45 0 .825.15 1.125.45.3.3.45.675.45 1.125 0 .25-.05.55-.15.9-.1.35-.225.7-.375 1.05-.15.35-.3.675-.45.975-.15.3-.225.55-.225.75 0 .35.125.6.375.75.25.15.55.225.9.225.35 0 .675-.075.975-.225.3-.15.6-.35.9-.6.45.55.8 1.15 1.05 1.8.25.65.375 1.325.375 2.025 0 1.65-.6 3.063-1.8 4.238-1.2 1.175-2.613 1.762-4.237 1.762zm0-12c-.55 0-1.025.196-1.425.588-.4.392-.6.862-.6 1.412s.2 1.02.6 1.412c.4.392.875.588 1.425.588s1.025-.196 1.425-.588c.4-.392.6-.862.6-1.412s-.2-1.02-.6-1.412C13.025 6.196 12.55 6 12 6z"/>
-                                </svg>
-                            </a>
-                            <a href="#" class="bg-green-600 text-white p-3 rounded-full hover:bg-green-700 transition-colors">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 2C6.477 2 2 6.477 2 12c0 5.523 4.477 10 10 10s10-4.477 10-10c0-5.523-4.477-10-10-10zm3.7 14.077c-1.75.362-5.453.362-7.203 0-1.896-.391-2.117-1.538-2.246-2.077-.02-.086-.029-.176-.029-.265v-2.97c0-.182.108-.35.27-.431l2.5-1.423c.094-.054.204-.081.315-.077.112.003.22.035.312.095l2.5 1.5c.06.036.111.084.15.14.04.055.066.118.078.185.013.067.01.136-.005.203-.016.067-.045.128-.085.18-.04.053-.091.096-.15.127l-2.212 1.255v1.439l4.866 2.233c.052.022.098.057.134.102.037.045.063.098.077.155.014.057.016.116.006.174-.01.058-.032.112-.065.159-.033.047-.076.085-.125.111-.049.026-.104.04-.160.04-.031 0-.062-.004-.092-.012z"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
+                    <p class="text-muted small text-center">Haz clic en el mapa para abrir en Google Maps</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-green-800 text-white py-8">
-        <div class="container mx-auto px-4">
-            <div class="text-center">
-                <p>&copy; 2025 El Paso del Perezoso - Cabaña Rústica. Todos los derechos reservados.</p>
-            </div>
+    <footer class="text-center py-4">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 El Paso del Perezoso - Cabaña Rústica. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <!-- JavaScript para el menú móvil -->
-    <script>
-        document.getElementById('menu-toggle').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu-items');
-            menu.classList.toggle('hidden');
-        });
-    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
