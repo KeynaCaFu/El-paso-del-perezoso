@@ -3,329 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Agrega esto en el <head> -->
+<meta name="theme-color" content="#1e5631">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
     <title>El Paso del Perezoso - Cabaña Rústica</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --color-primary: #1e5631;
-            --color-primary-light: #2a7d46;
-            --color-primary-dark: #164323;
-            --color-accent: #a4de02;
-            --color-light: #f8f9fa;
-            --color-dark: #212529;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-        }
-        
-        .navbar {
-            background-color: var(--color-primary);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-        
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 1.5rem;
-        }
-        
-        .navbar-brand img {
-            border: 2px solid white;
-        }
-        
-        .nav-link {
-            color: white !important;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-link:hover {
-            color: var(--color-accent) !important;
-        }
-        
-        .hero-section {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/imagen1.jpg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            color: white;
-        }
-        
-        .btn-primary {
-            background-color: var(--color-primary);
-            border-color: var(--color-primary);
-            padding: 12px 30px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        
-        .btn-primary:hover {
-            background-color: var(--color-primary-light);
-            border-color: var(--color-primary-light);
-            transform: translateY(-2px);
-        }
-        
-        .btn-outline-light:hover {
-            background-color: white;
-            color: var(--color-primary);
-        }
-        
-        .section-title {
-            color: var(--color-primary);
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 15px;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--color-accent);
-        }
-        
-        .feature-icon {
-            background-color: rgba(30, 86, 49, 0.1);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
-            color: var(--color-primary);
-            font-size: 1.5rem;
-        }
-        
-        .card {
-            border: none;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .card-img-top {
-            height: 250px;
-            object-fit: cover;
-        }
-        
-        .nature-card {
-            text-align: center;
-            padding: 2rem 1rem;
-            border-radius: 10px;
-            background-color: white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-        
-        .nature-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .nature-icon {
-            font-size: 2.5rem;
-            color: var(--color-primary);
-            margin-bottom: 1rem;
-        }
-        
-        .contact-info {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 1.5rem;
-        }
-        
-        .contact-icon {
-            background-color: rgba(30, 86, 49, 0.1);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 1rem;
-            color: var(--color-primary);
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-        
-        .social-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background-color: var(--color-primary);
-            color: white;
-            font-size: 1.2rem;
-            margin-right: 0.5rem;
-            transition: all 0.3s;
-        }
-        
-        .social-icon:hover {
-            background-color: var(--color-primary-light);
-            transform: translateY(-3px);
-        }
-        
-        .map-container {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .map-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            cursor: pointer;
-        }
-        
-        footer {
-            background-color: var(--color-primary);
-            color: white;
-            padding: 2rem 0;
-        }
-        
-        .bg-light-green {
-            background-color: rgba(164, 222, 2, 0.1);
-        }
-
-         /* Estilos para el carrusel */
-        .cabana-carousel {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .cabana-carousel .carousel-item img {
-            height: 450px;
-            object-fit: cover;
-        }
-        
-        .carousel-caption {
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 8px;
-            padding: 15px;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-        }
-        
-        .carousel-control-prev, 
-        .carousel-control-next {
-            width: 50px;
-            height: 50px;
-            background-color: rgba(0, 0, 0, 0.3);
-            border-radius: 50%;
-            top: 50%;
-            transform: translateY(-50%);
-            opacity: 0.8;
-        }
-        
-        .carousel-control-prev {
-            left: 15px;
-        }
-        
-        .carousel-control-next {
-            right: 15px;
-        }
-        
-        .carousel-control-prev:hover, 
-        .carousel-control-next:hover {
-            opacity: 1;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-        
-        .carousel-indicators button {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            margin: 0 5px;
-        }
-        
-       /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .hero-section h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-section p {
-                font-size: 1.1rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .cabana-carousel .carousel-item img {
-                height: 300px;
-            }
-            
-            .carousel-caption {
-                width: 90%;
-                padding: 10px;
-            }
-            
-            .carousel-caption h5 {
-                font-size: 1rem;
-            }
-            
-            .carousel-caption p {
-                font-size: 0.8rem;
-                display: none; /* Ocultar descripción en móviles para ahorrar espacio */
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header & Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <!-- Header & Navigation mejorado -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#">
                 <img src="img/perezoso.jpg" alt="Perezoso" class="rounded-circle me-2" width="50" height="50">
-                El Paso del Perezoso
+                <span class="d-none d-sm-block">El Paso del Perezoso</span>
+                <span class="d-block d-sm-none">El Paso</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#inicio">Inicio</a>
+                        <a class="nav-link active" href="#inicio">
+                            <i class="fas fa-home d-lg-none me-2"></i>Inicio
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#cabana">La Cabaña</a>
+                        <a class="nav-link" href="#cabana">
+                            <i class="fas fa-cabin d-lg-none me-2"></i>La Cabaña
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#habitaciones">Habitaciones</a>
+                        <a class="nav-link" href="#habitaciones">
+                            <i class="fas fa-bed d-lg-none me-2"></i>Habitaciones
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#naturaleza">Naturaleza</a>
+                        <a class="nav-link" href="#naturaleza">
+                            <i class="fas fa-tree d-lg-none me-2"></i>Naturaleza
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contacto">Contacto</a>
+                        <a class="nav-link" href="#contacto">
+                            <i class="fas fa-phone d-lg-none me-2"></i>Contacto
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none mt-3">
+                        <a href="#" class="btn btn-primary w-100 mb-2">Reservar</a>
+                        <a href="#" class="btn btn-outline-light w-100">Actividades</a>
                     </li>
                 </ul>
             </div>
@@ -698,5 +429,22 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    // Cerrar menú al hacer clic en un enlace (en dispositivos móviles)
+    document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('.nav-link');
+        const menuToggle = document.getElementById('navbarNav');
+        const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false});
+        
+        navLinks.forEach(function(navLink) {
+            navLink.addEventListener('click', function() {
+                if (window.innerWidth < 992) {
+                    bsCollapse.hide();
+                }
+            });
+        });
+    });
+    </script>
+
 </body>
 </html>
