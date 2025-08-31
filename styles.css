@@ -38,13 +38,20 @@
         }
         
         .hero-section {
-            height: 42vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/fondo2.jpg');
+            height: 70vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/hoja 8.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
             align-items: center;
             color: white;
+            
+        }
+
+         .hero-section h1{
+            align-items: center;
+            color: white;
+            font-size: 300%;
         }
         
         .btn-primary {
@@ -274,17 +281,19 @@
     
     /* Hero section mejorada para móviles */
     .hero-section {
-        height: 60vh;
-        padding-top: 70px; /* Compensa navbar fijo */
+        height: 70vh;
+        padding-top: 80px; /* Compensa navbar fijo */
     }
     
     .hero-section h1 {
-        font-size: 2rem;
+        font-size: 1rem;
+        margin-top: 55%;
     }
     
     .hero-section .btn {
-        width: 100%;
-        margin-bottom: 0.5rem;
+        width: 90%;
+        margin-bottom: 1.5rem;
+
     }
     
     /* Mejoras para el carrusel en móviles */
