@@ -2863,19 +2863,23 @@ textarea.form-control-lg {
 
 .btn-primary {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #1e30f3;
-  --bs-btn-border-color: #1e30f3;
+  --bs-btn-bg: #6f8871;
+  --bs-btn-border-color: #6f8871;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #1a29cf;
-  --bs-btn-hover-border-color: #1826c2;
+  --bs-btn-hover-bg: #29472f;
+  --bs-btn-hover-border-color: #29472f;
   --bs-btn-focus-shadow-rgb: 64, 79, 245;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #1826c2;
-  --bs-btn-active-border-color: #1724b6;
+  --bs-btn-active-bg: #29472f;
+  --bs-btn-active-border-color: #29472f;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #1e30f3;
-  --bs-btn-disabled-border-color: #1e30f3;
+  --bs-btn-disabled-bg: #29472f;
+  --bs-btn-disabled-border-color: #29472f;
+}
+
+.btn-primary:hover {
+  --bs-btn-bg: #29472f;
 }
 
 .btn-secondary {
@@ -11573,8 +11577,8 @@ html {
 }
 
 .bg-gradient-primary-to-secondary {
-  background: #1e30f3;
-  background: linear-gradient(135deg, #1e30f3 0%, #e21e80 100%);
+  background: linear-gradient(180deg,rgba(18, 102, 135, 1) 0%, rgba(60, 133, 90, 1) 50%, rgba(163, 152, 51, 1) 100%);
+  /* background: linear-gradient(135deg, #1e30f3 0%, #e21e80 100%); */
 }
 
 .text-gradient {
