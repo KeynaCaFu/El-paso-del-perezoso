@@ -16,19 +16,40 @@
     <link rel="alternate" hreflang="x-default" href="index.html" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="../css/styles.css" rel="stylesheet" />
-    <style>
-      /* Navbar fixed overlay and anchor offset */
-      nav.navbar-hero { position: fixed; top: 0; left: 0; width: 100%; z-index: 1030; }
-      .hero-header { padding-top: 96px; }
-      [id] { scroll-margin-top: 96px; }
-      @media (max-width: 576px) { .navbar-hero .brand-title { display: none; } }
-    </style>
+    
   </head>
   <body class="d-flex flex-column h-100">
     <main class="flex-shrink-0">
       <!-- Header-->
-      <header class="py-5 hero-header hero-lg hero-parallax text-white" id="home" style="background-image: url('../img/cabaña.jpg');">
-        <!-- Navbar inside hero -->
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-translucent py-3">
+          <div class="container px-5">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+              <img src="../assets/logo.png" alt="El Paso del Perezoso" style="height: 64px; width: auto;" />
+              <span class="brand-title ms-2">Cabaña El Paso del Perezoso</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                <li class="nav-item"><a class="nav-link" href="#details">Details</a></li>
+                <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                <li class="nav-item"><a class="nav-link" href="#location">Location</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Check availability</a></li>
+                <li class="nav-item ms-2">
+                  <div class="lang-switch" aria-label="Language selector">
+                    <a href="../index.html" aria-label="Español">🇪🇸 ES</a>
+                    <a href="index.html" class="active" aria-label="English">EN 🇬🇧</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+         </nav>
+         <!-- Header with overlaid Navbar -->
+         <header class="py-5 hero-header hero-lg hero-parallax text-white" id="home" style="background-image: url('../img/cabaña.jpg');">
         <nav class="navbar navbar-expand-lg navbar-dark navbar-hero py-3">
           <div class="container px-5">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
@@ -55,12 +76,12 @@
               </ul>
             </div>
           </div>
-        </nav>
-        <div class="container px-5 pb-5">
+         </nav>
+        <div class="container px-5 pb-5 pt-5">
           <div class="row gx-5 align-items-center">
             <div class="col-xxl-7">
               <div class="text-center">
-                <div class="fs-3 fw-light text-white">Welcome to your perfect retreat</div>
+                <div class="fs-3 fw-light text-white text-shadow-lg">Welcome to your perfect retreat</div>
                 <!-- <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">El Paso del Perezoso Cabin</span></h1> -->
                 <!-- <p class="lead mb-4">A fully equipped wooden cabin immersed in nature—ideal for couples, families, or friends seeking peace and a genuine rural experience.</p> -->
                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center mb-3">

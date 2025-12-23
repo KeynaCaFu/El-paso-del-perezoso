@@ -51,18 +51,4 @@ document.addEventListener('hidden.bs.modal', (e) => {
 });
 
 // Toggle solid navbar once page scrolls past the hero
-document.addEventListener('DOMContentLoaded', () => {
-	const navbar = document.querySelector('.navbar-hero');
-	const hero = document.querySelector('.hero-header');
-
-	const updateNavbarSolid = () => {
-		if (!navbar || !hero) return;
-		const threshold = Math.max(0, hero.offsetHeight - 80);
-		const shouldBeSolid = window.scrollY >= threshold;
-		navbar.classList.toggle('navbar-solid', shouldBeSolid);
-	};
-
-	updateNavbarSolid();
-	window.addEventListener('scroll', updateNavbarSolid, { passive: true });
-	window.addEventListener('resize', updateNavbarSolid);
-});
+// (navbar-solid scroll toggle removido para dejar navbar no fijo)
