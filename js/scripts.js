@@ -19,7 +19,8 @@ document.addEventListener('click', function (e) {
 	modal.show();
 
 	// Determine carousel inside the modal
-	const carouselId = modalId === 'modalPlantaAlta' ? 'lightboxPlantaAlta' : 'lightboxPlantaBaja';
+	// Derive carousel id automatically (modalX -> lightboxX)
+	const carouselId = (trigger.getAttribute('data-carousel')) || modalId.replace('modal', 'lightbox');
 	const carouselEl = document.getElementById(carouselId);
 	if (!carouselEl) return;
 
@@ -28,16 +29,23 @@ document.addEventListener('click', function (e) {
 	carousel.to(index);
 });
 
-// Pause carousels when modals are hidden (cleanup)
-['modalPlantaAlta', 'modalPlantaBaja'].forEach((id) => {
-	const el = document.getElementById(id);
-	if (!el) return;
-	el.addEventListener('hidden.bs.modal', () => {
-		const carouselId = id === 'modalPlantaAlta' ? 'lightboxPlantaAlta' : 'lightboxPlantaBaja';
-		const carouselEl = document.getElementById(carouselId);
-		if (carouselEl) {
-			const c = bootstrap.Carousel.getInstance(carouselEl);
-			if (c) c.pause();
-		}
+// Pause any carousel inside any modal when it is hidden (generic cleanup)
+document.addEventListener('hidden.bs.modal', (e) => {
+	const modalEl = e.target;
+	if (!modalEl) return;
+
+	const candidates = [];
+	// First, try derived id approach (modalX -> lightboxX)
+	if (modalEl.id) {
+		const derivedId = modalEl.id.replace('modal', 'lightbox');
+		const derivedEl = document.getElementById(derivedId);
+		if (derivedEl) candidates.push(derivedEl);
+	}
+	// Fallback: any carousels inside the modal
+	modalEl.querySelectorAll('.carousel').forEach((el) => candidates.push(el));
+
+	candidates.forEach((carouselEl) => {
+		const instance = bootstrap.Carousel.getInstance(carouselEl);
+		if (instance) instance.pause();
 	});
 });
