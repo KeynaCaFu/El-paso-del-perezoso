@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content />
+        <meta name="description" content="Solicitar disponibilidad para reservar la cabaña El Paso del Perezoso en Cariari, Limón." />
         <meta name="author" content />
         <title>Solicitar disponibilidad - El Paso del Perezoso</title>
         <!-- Favicon-->
@@ -12,6 +12,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+        <!-- Alternate languages -->
+        <link rel="alternate" hreflang="es" href="contact.html" />
+        <link rel="alternate" hreflang="en" href="en/contact.html" />
+        <link rel="alternate" hreflang="x-default" href="contact.html" />
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -27,9 +31,17 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
                             <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index.html#sobre">Sobre</a></li>
                             <li class="nav-item"><a class="nav-link" href="index.html#caracteristicas">Características</a></li>
-                            <li class="nav-item"><a class="nav-link" href="index.html#amenidades">Amenidades</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index.html#detalles">Detalles</a></li>
+                            
                             <li class="nav-item"><a class="nav-link" href="contact.html">Reservar</a></li>
+                            <li class="nav-item ms-2">
+                                <div class="lang-switch" aria-label="Selector de idioma">
+                                    <a href="contact.html" class="active" aria-label="Español">🇪🇸 ES</a>
+                                    <a href="en/contact.html" aria-label="English">EN 🇬🇧</a>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -117,6 +129,11 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js?v=2"></script>
+        <!-- Floating language switch (mobile) -->
+        <div class="lang-switch lang-switch-fab" aria-label="Selector de idioma flotante">
+            <a href="contact.html" class="active" aria-label="Español">🇪🇸 ES</a>
+            <a href="en/contact.html" aria-label="English">EN 🇬🇧</a>
+        </div>
         <script>
             // Set minimum date to today
             document.addEventListener('DOMContentLoaded', function() {
