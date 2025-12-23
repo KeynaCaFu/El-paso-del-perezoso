@@ -196,6 +196,36 @@
 }
 .navbar .lang-switch { margin-left: .5rem; }
 
+/* Mobile: full-width dropdown under navbar (hero) */
+@media (max-width: 991.98px) {
+  .navbar-hero .navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.68);
+    width: 100%;
+    padding: 12px 16px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  .navbar-hero .nav-link { color: #ffffff !important; }
+}
+
+/* Mobile: full-width dropdown for light booking navbars */
+@media (max-width: 991.98px) {
+  .navbar.bg-white .navbar-collapse {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 12px 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+}
+
+/* Mobile: push toggler to far edge and reduce navbar padding */
+@media (max-width: 576px) {
+  .navbar .container.px-5 { padding-left: 0.75rem !important; padding-right: 0.75rem !important; }
+  .navbar .navbar-toggler { margin-left: auto !important; }
+}
+
 /* Floating pill for mobile */
 .lang-switch-fab {
   position: fixed;
