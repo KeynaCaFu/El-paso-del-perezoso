@@ -190,6 +190,11 @@
 .text-shadow-lg {
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
+.hero-title {
+  color: #ffffff !important;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.55);
+  letter-spacing: 0.5px;
+}
 .lang-switch a.active {
   background: #0b4b03; /* site green */
   color: #ffffff !important;
