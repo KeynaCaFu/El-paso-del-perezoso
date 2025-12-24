@@ -138,20 +138,109 @@
             <a href="en/contact.html" aria-label="English">EN 🇬🇧</a>
         </div>
         <script>
-            // Set minimum date to today
-            document.addEventListener('DOMContentLoaded', function() {
+            // Utilities
+            function getToday() {
                 const today = new Date();
                 const year = today.getFullYear();
                 const month = String(today.getMonth() + 1).padStart(2, '0');
                 const day = String(today.getDate()).padStart(2, '0');
-                const minDate = `${year}-${month}-${day}`;
+                return `${year}-${month}-${day}`;
+            }
+            
+            function formatDateForDisplay(dateString) {
+                return new Date(dateString).toLocaleDateString('es-CR', { year: 'numeric', month: 'long', day: 'numeric' });
+            }
+
+            // Crear elementos de error si no existen
+            function createErrorElements() {
+                const checkInContainer = document.getElementById('checkIn').parentElement;
+                const checkOutContainer = document.getElementById('checkOut').parentElement;
                 
-                document.getElementById('checkIn').setAttribute('min', minDate);
+                if (!document.getElementById('checkInError')) {
+                    const checkInError = document.createElement('small');
+                    checkInError.id = 'checkInError';
+                    checkInError.className = 'text-danger d-block mt-1';
+                    checkInContainer.appendChild(checkInError);
+                }
+                
+                if (!document.getElementById('checkOutError')) {
+                    const checkOutError = document.createElement('small');
+                    checkOutError.id = 'checkOutError';
+                    checkOutError.className = 'text-danger d-block mt-1';
+                    checkOutContainer.appendChild(checkOutError);
+                }
+            }
+
+            // Validar fechas en tiempo real
+            function validateDates() {
+                const checkIn = document.getElementById('checkIn');
+                const checkOut = document.getElementById('checkOut');
+                const checkInError = document.getElementById('checkInError');
+                const checkOutError = document.getElementById('checkOutError');
+                const today = getToday();
+                
+                let isValid = true;
+                
+                // Limpiar errores previos
+                checkInError.textContent = '';
+                checkOutError.textContent = '';
+                checkIn.classList.remove('is-invalid');
+                checkOut.classList.remove('is-invalid');
+                
+                // Validar fecha de entrada
+                if (checkIn.value) {
+                    if (checkIn.value < today) {
+                        checkInError.textContent = 'La fecha de entrada no puede ser anterior a hoy';
+                        checkIn.classList.add('is-invalid');
+                        isValid = false;
+                    }
+                }
+                
+                // Validar fecha de salida
+                if (checkOut.value) {
+                    if (!checkIn.value || checkOut.value <= checkIn.value) {
+                        if (!checkIn.value) {
+                            checkOutError.textContent = 'Selecciona primero la fecha de entrada';
+                        } else {
+                            checkOutError.textContent = 'La fecha de salida debe ser posterior a la fecha de entrada';
+                        }
+                        checkOut.classList.add('is-invalid');
+                        isValid = false;
+                    } else if (checkOut.value < today) {
+                        checkOutError.textContent = 'La fecha de salida no puede ser anterior a hoy';
+                        checkOut.classList.add('is-invalid');
+                        isValid = false;
+                    }
+                }
+                
+                return isValid;
+            }
+
+            // Set minimum date to today
+            document.addEventListener('DOMContentLoaded', function() {
+                const today = getToday();
+                const checkInInput = document.getElementById('checkIn');
+                const checkOutInput = document.getElementById('checkOut');
+                
+                checkInInput.setAttribute('min', today);
+                checkOutInput.setAttribute('min', today);
+                
+                createErrorElements();
+                
+                // Event listeners para validación en tiempo real
+                checkInInput.addEventListener('change', validateDates);
+                checkOutInput.addEventListener('change', validateDates);
             });
             
             // Booking form handler
             document.getElementById('bookingForm').addEventListener('submit', function(e) {
                 e.preventDefault();
+                
+                // Validar fechas antes de enviar
+                if (!validateDates()) {
+                    alert('Por favor, corrige los errores en las fechas');
+                    return;
+                }
                 
                 // Collect form data
                 const fullName = document.getElementById('fullName').value;
@@ -161,22 +250,6 @@
                 const guests = document.getElementById('guests').value;
                 const requests = document.getElementById('requests').value;
                 
-                // Validar fechas
-                if (new Date(checkIn) >= new Date(checkOut)) {
-                    alert('La fecha de salida debe ser posterior a la fecha de entrada');
-                    return;
-                }
-                
-                // Validar que la fecha de entrada no sea en el pasado
-                const today = new Date();
-                today.setHours(0, 0, 0, 0);
-                const checkInDate = new Date(checkIn);
-                
-                if (checkInDate < today) {
-                    alert('La fecha de entrada no puede ser anterior a hoy');
-                    return;
-                }
-                
                 // Crear mensaje para WhatsApp
                 const mensaje = `*NUEVA RESERVA - EL PASO DEL PEREZOSO*
 
@@ -185,17 +258,15 @@ Nombre: ${fullName}
 Teléfono: ${phone}
 
 *Detalles de la Reserva:*
-Fecha Entrada: ${new Date(checkIn).toLocaleDateString('es-CR', { year: 'numeric', month: 'long', day: 'numeric' })}
-Fecha Salida: ${new Date(checkOut).toLocaleDateString('es-CR', { year: 'numeric', month: 'long', day: 'numeric' })}
+Fecha Entrada: ${formatDateForDisplay(checkIn)}
+Fecha Salida: ${formatDateForDisplay(checkOut)}
 Número de Huéspedes: ${guests}
 
 *Solicitudes Especiales:*
 ${requests || 'Ninguna'}`;
                 
-                // Número de WhatsApp - CORRECTO: +506 88834349
+                // Número de WhatsApp
                 const numeroWhatsApp = '50688834349';
-                
-                console.log('DEBUG - Número correcto:', numeroWhatsApp);
                 
                 // Verificar que el número sea válido
                 if (!numeroWhatsApp || numeroWhatsApp.length < 10) {
@@ -206,16 +277,16 @@ ${requests || 'Ninguna'}`;
                 // Crear enlace de WhatsApp
                 const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
                 
-                // Log para debugging
-                console.log('Número WhatsApp enviado:', numeroWhatsApp);
-                console.log('URL generada:', urlWhatsApp);
-                
                 // Show success message before opening WhatsApp
                 const successMsg = document.getElementById('successMessage');
                 successMsg.classList.remove('d-none');
                 
                 // Reset form
                 document.getElementById('bookingForm').reset();
+                document.getElementById('checkInError').textContent = '';
+                document.getElementById('checkOutError').textContent = '';
+                document.getElementById('checkIn').classList.remove('is-invalid');
+                document.getElementById('checkOut').classList.remove('is-invalid');
                 
                 // Abrir WhatsApp después de 500ms (permite ver el mensaje de éxito)
                 setTimeout(() => {

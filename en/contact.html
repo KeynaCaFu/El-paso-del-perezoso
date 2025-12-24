@@ -111,17 +111,108 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
+      // Utilities
+      function getToday() {
         const today = new Date();
         const year = today.getFullYear();
         const month = String(today.getMonth() + 1).padStart(2, '0');
         const day = String(today.getDate()).padStart(2, '0');
-        const minDate = `${year}-${month}-${day}`;
-        document.getElementById('checkIn').setAttribute('min', minDate);
+        return `${year}-${month}-${day}`;
+      }
+
+      function formatDateForDisplay(dateString) {
+        return new Date(dateString).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      }
+
+      // Create error elements if they don't exist
+      function createErrorElements() {
+        const checkInContainer = document.getElementById('checkIn').parentElement;
+        const checkOutContainer = document.getElementById('checkOut').parentElement;
+        
+        if (!document.getElementById('checkInError')) {
+          const checkInError = document.createElement('small');
+          checkInError.id = 'checkInError';
+          checkInError.className = 'text-danger d-block mt-1';
+          checkInContainer.appendChild(checkInError);
+        }
+        
+        if (!document.getElementById('checkOutError')) {
+          const checkOutError = document.createElement('small');
+          checkOutError.id = 'checkOutError';
+          checkOutError.className = 'text-danger d-block mt-1';
+          checkOutContainer.appendChild(checkOutError);
+        }
+      }
+
+      // Validate dates in real time
+      function validateDates() {
+        const checkIn = document.getElementById('checkIn');
+        const checkOut = document.getElementById('checkOut');
+        const checkInError = document.getElementById('checkInError');
+        const checkOutError = document.getElementById('checkOutError');
+        const today = getToday();
+        
+        let isValid = true;
+        
+        // Clear previous errors
+        checkInError.textContent = '';
+        checkOutError.textContent = '';
+        checkIn.classList.remove('is-invalid');
+        checkOut.classList.remove('is-invalid');
+        
+        // Validate check-in date
+        if (checkIn.value) {
+          if (checkIn.value < today) {
+            checkInError.textContent = 'Check-in cannot be in the past';
+            checkIn.classList.add('is-invalid');
+            isValid = false;
+          }
+        }
+        
+        // Validate check-out date
+        if (checkOut.value) {
+          if (!checkIn.value || checkOut.value <= checkIn.value) {
+            if (!checkIn.value) {
+              checkOutError.textContent = 'Select check-in date first';
+            } else {
+              checkOutError.textContent = 'Check-out must be after check-in';
+            }
+            checkOut.classList.add('is-invalid');
+            isValid = false;
+          } else if (checkOut.value < today) {
+            checkOutError.textContent = 'Check-out cannot be in the past';
+            checkOut.classList.add('is-invalid');
+            isValid = false;
+          }
+        }
+        
+        return isValid;
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        const today = getToday();
+        const checkInInput = document.getElementById('checkIn');
+        const checkOutInput = document.getElementById('checkOut');
+        
+        checkInInput.setAttribute('min', today);
+        checkOutInput.setAttribute('min', today);
+        
+        createErrorElements();
+        
+        // Event listeners for real-time validation
+        checkInInput.addEventListener('change', validateDates);
+        checkOutInput.addEventListener('change', validateDates);
       });
 
       document.getElementById('bookingForm').addEventListener('submit', function (e) {
         e.preventDefault();
+        
+        // Validate dates before submitting
+        if (!validateDates()) {
+          alert('Please correct the date errors');
+          return;
+        }
+        
         const fullName = document.getElementById('fullName').value;
         const phone = document.getElementById('phone').value;
         const checkIn = document.getElementById('checkIn').value;
@@ -129,20 +220,7 @@
         const guests = document.getElementById('guests').value;
         const requests = document.getElementById('requests').value;
 
-        if (new Date(checkIn) >= new Date(checkOut)) {
-          alert('Check-out must be after check-in');
-          return;
-        }
-
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
-        const checkInDate = new Date(checkIn);
-        if (checkInDate < today) {
-          alert('Check-in cannot be in the past');
-          return;
-        }
-
-        const message = `*NEW BOOKING - EL PASO DEL PEREZOSO*\n\n*Guest:*\nName: ${fullName}\nPhone: ${phone}\n\n*Stay:*\nCheck-in: ${new Date(checkIn).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}\nCheck-out: ${new Date(checkOut).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}\nGuests: ${guests}\n\n*Special Requests:*\n${requests || 'None'}`;
+        const message = `*NEW BOOKING - EL PASO DEL PEREZOSO*\n\n*Guest:*\nName: ${fullName}\nPhone: ${phone}\n\n*Stay:*\nCheck-in: ${formatDateForDisplay(checkIn)}\nCheck-out: ${formatDateForDisplay(checkOut)}\nGuests: ${guests}\n\n*Special Requests:*\n${requests || 'None'}`;
 
         const numeroWhatsApp = '50688834349';
         if (!numeroWhatsApp || numeroWhatsApp.length < 10) {
@@ -154,6 +232,11 @@
         const successMsg = document.getElementById('successMessage');
         successMsg.classList.remove('d-none');
         document.getElementById('bookingForm').reset();
+        document.getElementById('checkInError').textContent = '';
+        document.getElementById('checkOutError').textContent = '';
+        document.getElementById('checkIn').classList.remove('is-invalid');
+        document.getElementById('checkOut').classList.remove('is-invalid');
+        
         setTimeout(() => window.open(urlWhatsApp, '_blank'), 500);
         setTimeout(() => successMsg.classList.add('d-none'), 4000);
       });
