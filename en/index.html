@@ -33,11 +33,12 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
                 <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#details">Details</a></li>
-                <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-                <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-                <li class="nav-item"><a class="nav-link" href="#location">Location</a></li>
+                <li class="nav-item"><a class="nav-link" href="#sobre">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#caracteristicas">Features</a></li>
+                <li class="nav-item"><a class="nav-link" href="#detalles">Details</a></li>
+                <li class="nav-item"><a class="nav-link" href="#galeria">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="#faq">Frequently Asked Questions</a></li>
+                <li class="nav-item"><a class="nav-link" href="#ubicacion">Location</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Check availability</a></li>
                 <li class="nav-item ms-2">
                   <div class="lang-switch" aria-label="Language selector">
@@ -66,7 +67,7 @@
         </div>
       </header>
       <!-- About -->
-      <section class="py-5 bg-light" id="about">
+      <section class="py-5 bg-light" id="sobre">
         <div class="container px-5">
           <div class="row gx-5 justify-content-center mb-4">
             <div class="col-xxl-8 text-center">
@@ -77,8 +78,49 @@
           
         </div>
       </section>
-      <!-- Features -->
-      <section class="py-5" id="features">
+      <!-- Lightbox Modals -->
+      <div class="modal fade" id="modalPlantaAlta" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content bg-black bg-opacity-75 border-0">
+            <div class="modal-body p-0 position-relative">
+              <div id="lightboxPlantaAlta" class="carousel slide" data-bs-ride="false" data-bs-keyboard="true">
+                <div class="carousel-inner">
+                  <div class="carousel-item active"><img src="../img/1756493810569.jpg" class="d-block w-100" alt="Upper floor - bedroom view" loading="lazy" style="max-height: 80vh; object-fit: contain;" /></div>
+                  <div class="carousel-item"><img src="../img/1756431239857.jpg" class="d-block w-100" alt="Upper floor - interior details" loading="lazy" style="max-height: 80vh; object-fit: contain;" /></div>
+                  <div class="carousel-item"><img src="../img/1766532217122.jpg" class="d-block w-100" alt="Upper floor - image 3" loading="lazy" style="max-height: 80vh; object-fit: contain;" /></div>
+                  <div class="carousel-item"><img src="../img/1766532217175.jpg" class="d-block w-100" alt="Upper floor - image 4" loading="lazy" style="max-height: 80vh; object-fit: contain;" /></div>
+                  <div class="carousel-item"><img src="../img/1766532217149.jpg" class="d-block w-100" alt="Upper floor - image 5" loading="lazy" style="max-height: 80vh; object-fit: contain;" /></div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#lightboxPlantaAlta" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
+                <button class="carousel-control-next" type="button" data-bs-target="#lightboxPlantaAlta" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="modalPlantaBaja" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content bg-black bg-opacity-75 border-0">
+            <div class="modal-body p-0 position-relative">
+              <div id="lightboxPlantaBaja" class="carousel slide" data-bs-ride="false" data-bs-keyboard="true">
+                <div class="carousel-inner">
+                  <div class="carousel-item active"><img src="../img/1756493810603.jpg" class="d-block w-100" alt="Lower floor - living area" loading="lazy" style="max-height: 80vh; object-fit: contain;" /></div>
+                  <div class="carousel-item"><img src="../img/1766532217091.jpg" class="d-block w-100" alt="Lower floor - image 2" loading="lazy" style="max-height: 80vh; object-fit: contain;" /></div>
+                  <div class="carousel-item"><img src="../img/1756431239857.jpg" class="d-block w-100" alt="Lower floor - space view" loading="lazy" style="max-height: 80vh; object-fit: contain;" /></div>
+                  <div class="carousel-item"><img src="../img/Cocina.jpg" class="d-block w-100" alt="Lower floor - kitchen" loading="lazy" style="max-height: 80vh; object-fit: contain;"></div>
+                  <div class="carousel-item"><img src="../img/sala.jpg" class="d-block w-100" alt="Lower floor - living room" loading="lazy" style="max-height: 80vh; object-fit: contain;"></div>
+                  <div class="carousel-item"><img src="../img/sala2.jpg" class="d-block w-100" alt="Lower floor - living room 2" loading="lazy" style="max-height: 80vh; object-fit: contain;"></div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#lightboxPlantaBaja" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
+                <button class="carousel-control-next" type="button" data-bs-target="#lightboxPlantaBaja" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Characteristics Section-->
+      <section class="py-5" id="caracteristicas">
         <div class="container px-5">
           <div class="row gx-5 justify-content-center mb-5">
             <div class="col-xxl-8">
@@ -192,12 +234,12 @@
         </div>
       </section>
       <!-- Details -->
-      <section class="py-5" id="details">
+      <section class="py-5" id="detalles">
         <div class="container px-5">
           <div class="row gx-5 justify-content-center mb-5">
             <div class="col-xxl-8 text-center">
               <h2 class="display-5 fw-bolder mb-4"><span class="text-gradient d-inline">What this place offers</span></h2>
-              <p class="lead fw-light mb-4">Organized by category for quick reference.</p>
+              <!-- <p class="lead fw-light mb-4">Organized by category for quick reference.</p> -->
             </div>
           </div>
           <div class="row gx-5 gy-4">
@@ -219,7 +261,7 @@
       <!-- Not included -->
       <section class="py-5 bg-white" id="not-included">
         <div class="container px-5">
-          <div class="row gx-5 justify-content-center mb-4"><div class="col-xxl-8 text-center"><h2 class="display-6 fw-bolder mb-3"><span class="text-gradient d-inline">Not included</span></h2><p class="lead fw-light mb-0">No Wi‑Fi, TV, washer/dryer, air conditioning, or smoke/CO detectors. Portable fans provided.</p></div></div>
+          <div class="row gx-5 justify-content-center mb-4"><div class="col-xxl-8 text-center"><h2 class="display-6 fw-bolder mb-3"><span class="text-gradient d-inline">Not included</span></h2></div></div>
           <div class="row gx-5 gy-4">
             <div class="col-md-4"><div class="d-flex align-items-start"><i class="bi bi-wifi-off text-danger me-3 fs-3"></i><div><h6 class="mb-1">Wi‑Fi</h6><small class="text-muted">Rural area with limited signal</small></div></div></div>
             <div class="col-md-4"><div class="d-flex align-items-start"><i class="bi bi-tv text-danger me-3 fs-3"></i><div><h6 class="mb-1">TV</h6><small class="text-muted">Focus on nature and rest</small></div></div></div>
@@ -233,15 +275,15 @@
       <!-- Prices & Rules -->
       <section class="py-5" id="pricing">
         <div class="container px-5">
-          <div class="row gx-5 justify-content-center mb-5"><div class="col-xxl-8 text-center"><h2 class="display-5 fw-bolder mb-4"><span class="text-gradient d-inline">Prices & Rules</span></h2><p class="lead fw-light mb-0">Clear information to plan your stay.</p></div></div>
+          <div class="row gx-5 justify-content-center mb-5"><div class="col-xxl-8 text-center"><h2 class="display-5 fw-bolder mb-4"><span class="text-gradient d-inline">Prices & Rules</span></h2></div></div>
           <div class="row gx-5 gy-4">
             <div class="col-lg-6"><div class="card border-0 shadow-sm h-100"><div class="card-body p-4"><h3 class="h5 fw-bolder mb-3"><i class="bi bi-cash-coin text-primary me-2"></i>Prices</h3><ul class="text-muted mb-4"><li>Rates vary by season and number of guests.</li><li>Request your quote via WhatsApp from the booking page.</li><li>Multi-night stays may receive a discount depending on availability.</li></ul><a href="contact.html" class="btn btn-primary"><i class="bi bi-calendar-check me-2"></i>Request price & availability</a></div></div></div>
-            <div class="col-lg-6"><div class="card border-0 shadow-sm h-100"><div class="card-body p-4"><h3 class="h5 fw-bolder mb-3"><i class="bi bi-journal-check text-primary me-2"></i>House Rules</h3><ul class="mb-0"><li class="mb-2">No smoking inside the cabin (allowed in designated outdoor areas).</li><li class="mb-2">Pets are welcome; owners are responsible for any damage or extra cleaning.</li><li class="mb-2">Please respect the quiet environment; avoid loud music, especially at night.</li><li class="mb-2">Use the wood-fired stove only under host supervision.</li><li class="mb-0">For safety, always supervise children, especially near the pond.</li></ul></div></div></div>
+            <div class="col-lg-6"><div class="card border-0 shadow-sm h-100"><div class="card-body p-4"><h3 class="h5 fw-bolder mb-3"><i class="bi bi-journal-check text-primary me-2"></i>House Rules</h3><ul class="mb-0"><li class="mb-2">No smoking inside the cabin (allowed in designated outdoor areas).</li><li class="mb-2">Pets are welcome; owners are responsible for any damage or extra cleaning.</li><li class="mb-2">Use the wood-fired stove only under host supervision.</li><li class="mb-0">For safety, always supervise children, especially near the pond.</li></ul></div></div></div>
           </div>
         </div>
       </section>
       <!-- Gallery -->
-      <section class="py-5" id="gallery">
+      <section class="py-5" id="galeria">
         <div class="container px-5">
           <div class="row gx-5 justify-content-center mb-5">
             <div class="col-xxl-8">
@@ -311,49 +353,8 @@
     </div>
 </section>
 
-<!-- Lightbox Modals (EN) -->
-<div class="modal fade" id="modalUpper" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-          <div class="modal-content bg-black bg-opacity-75 border-0">
-            <div class="modal-body p-0 position-relative">
-              <div id="lightboxUpper" class="carousel slide" data-bs-ride="false" data-bs-keyboard="true">
-                <div class="carousel-inner">
-                  <div class="carousel-item active"><img src="../img/1756493810569.jpg" class="d-block w-100" alt="Upper floor - bedroom view" loading="lazy" /></div>
-                  <div class="carousel-item"><img src="../img/1756431239857.jpg" class="d-block w-100" alt="Upper floor - interior details" loading="lazy" /></div>
-                  <div class="carousel-item"><img src="../img/perezoso.jpg" class="d-block w-100" alt="Sloth in the trees" loading="lazy" /></div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#lightboxUpper" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
-                <button class="carousel-control-next" type="button" data-bs-target="#lightboxUpper" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
-              </div>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal fade" id="modalLower" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-          <div class="modal-content bg-black bg-opacity-75 border-0">
-            <div class="modal-body p-0 position-relative">
-              <div id="lightboxLower" class="carousel slide" data-bs-ride="false" data-bs-keyboard="true">
-                <div class="carousel-inner">
-                  <div class="carousel-item active"><img src="../img/1756493810603.jpg" class="d-block w-100" alt="Lower floor - living area" loading="lazy" /></div>
-                  <div class="carousel-item"><img src="../img/hoja 5.jpg" class="d-block w-100" alt="Leaf close-up" loading="lazy" /></div>
-                  <div class="carousel-item"><img src="../img/1756431239857.jpg" class="d-block w-100" alt="Lower floor - space view" loading="lazy" /></div>
-                  <div class="carousel-item"><img src="../img/cocina.jpg" class="d-block w-100" alt="Lower floor - kitchen" loading="lazy"></div>
-                  <div class="carousel-item"><img src="../img/sala.jpg" class="d-block w-100" alt="Lower floor - living room" loading="lazy"></div>
-                  <div class="carousel-item"><img src="../img/sala2.jpg" class="d-block w-100" alt="Lower floor - living room 2" loading="lazy"></div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#lightboxLower" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
-                <button class="carousel-control-next" type="button" data-bs-target="#lightboxLower" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
-              </div>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal fade" id="modalGallery" tabindex="-1" aria-hidden="true">
+<!-- Modal de Galería (lightbox) -->
+<div class="modal fade" id="modalGallery" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
           <div class="modal-content bg-black bg-opacity-75 border-0">
             <div class="modal-body p-0 position-relative">
@@ -374,7 +375,6 @@
                 <button class="carousel-control-prev" type="button" data-bs-target="#lightboxGallery" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
                 <button class="carousel-control-next" type="button" data-bs-target="#lightboxGallery" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
               </div>
-              
             </div>
           </div>
         </div>
@@ -393,12 +393,12 @@
         </div>
       </section>
       <!-- Location -->
-      <section class="py-5 bg-light" id="location">
+      <section class="py-5 bg-light" id="ubicacion">
         <div class="container px-5">
           <div class="row gx-5 justify-content-center mb-5"><div class="col-xxl-8"><div class="text-center"><h2 class="display-5 fw-bolder mb-4"><span class="text-gradient d-inline">Location</span></h2><p class="lead fw-light mb-4">Find our cabin in the heart of nature</p></div></div></div>
           <div class="row gx-5 align-items-center">
             <div class="col-lg-6 mb-4 mb-lg-0">
-              <div class="card border-0 shadow-lg h-100"><div class="card-body p-5"><h3 class="h5 fw-bolder mb-4"><i class="bi bi-geo-alt-fill text-primary me-2"></i>Address</h3><p class="mb-3"><a href="https://www.google.com/maps/place/10°22'26.6%22N+83°43'35.4%22W/@10.3740556,-83.7268889,17z/data=!3m1!4b1!4m4!3m3!8m2!3d10.3740556!4d-83.7268889?entry=ttu" target="_blank" class="text-decoration-none text-primary fw-bold">Limón, Pococí, Cariari</a></p><p class="mb-3"><a href="https://www.google.com/maps/place/10°22'26.6%22N+83°43'35.4%22W/@10.3740556,-83.7268889,17z/data=!3m1!4b1!4m4!3m3!8m2!3d10.3740556!4d-83.7268889?entry=ttu" target="_blank" class="text-decoration-none text-primary fw-bold">El Paso del Perezoso Cabin</a></p><small class="text-muted d-block mb-4">Click to open in Google Maps</small><a href="https://www.google.com/maps/place/10°22'26.6%22N+83°43'35.4%22W/@10.3740556,-83.7268889,17z/data=!3m1!4b1!4m4!3m3!8m2!3d10.3740556!4d-83.7268889?entry=ttu" target="_blank" class="btn btn-primary"><i class="bi bi-map me-2"></i>Open Google Maps</a></div></div>
+              <div class="card border-0 shadow-lg h-100"><div class="card-body p-5"><h3 class="h5 fw-bolder mb-4"><i class="bi bi-geo-alt-fill text-primary me-2"></i>Ubicación</h3><p class="mb-3"><a href="https://www.google.com/maps/place/10°22'26.6%22N+83°43'35.4%22W/@10.3740556,-83.7268889,17z/data=!3m1!4b1!4m4!3m3!8m2!3d10.3740556!4d-83.7268889?entry=ttu" target="_blank" class="text-decoration-none text-primary fw-bold">Limón, Pococí, Cariari</a></p><p class="mb-3"><a href="https://www.google.com/maps/place/10°22'26.6%22N+83°43'35.4%22W/@10.3740556,-83.7268889,17z/data=!3m1!4b1!4m4!3m3!8m2!3d10.3740556!4d-83.7268889?entry=ttu" target="_blank" class="text-decoration-none text-primary fw-bold">El Paso del Perezoso Cabin</a></p><small class="text-muted d-block mb-4">Click to open in Google Maps</small><a href="https://www.google.com/maps/place/10°22'26.6%22N+83°43'35.4%22W/@10.3740556,-83.7268889,17z/data=!3m1!4b1!4m4!3m3!8m2!3d10.3740556!4d-83.7268889?entry=ttu" target="_blank" class="btn btn-primary"><i class="bi bi-map me-2"></i>Open Google Maps</a></div></div>
             </div>
             <div class="col-lg-6"><div class="shadow-lg rounded-3 overflow-hidden" style="height: 400px;"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.68907212853!2d-83.72688890000001!3d10.3740556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1sCaraña%20El%20Paso%20del%20Perezoso!2s10.3740556%2C-83.7268889!5e0!3m2!1ses!2scr!4v1701086400000!5m2!1ses!2scr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></div>
           </div>
@@ -411,6 +411,8 @@
           <div class="col-auto"><div class="small m-0 text-muted">Copyright © 2024 El Paso del Perezoso. All rights reserved.</div></div>
           <div class="col-auto">
             <a class="small text-decoration-none me-2" href="#home">Home</a>
+            <span class="mx-1 text-muted">·</span>
+            <a class="small text-decoration-none mx-2" href="#caracteristicas">Features</a>
             <span class="mx-1 text-muted">·</span>
             <a class="small text-decoration-none mx-2" href="contact.html">Book</a>
           </div>
