@@ -29,6 +29,15 @@ document.addEventListener('click', function (e) {
 	carousel.to(index);
 });
 
+// Click-to-zoom for images inside modals (plants and galleries)
+document.addEventListener('click', function (e) {
+	const img = e.target.closest('img.zoomable');
+	if (!img) return;
+	// Do not interfere with drag, only simple click
+	e.preventDefault();
+	img.classList.toggle('zoomed');
+});
+
 // Pause any carousel inside any modal when it is hidden (generic cleanup)
 document.addEventListener('hidden.bs.modal', (e) => {
 	const modalEl = e.target;
@@ -47,6 +56,20 @@ document.addEventListener('hidden.bs.modal', (e) => {
 	candidates.forEach((carouselEl) => {
 		const instance = bootstrap.Carousel.getInstance(carouselEl);
 		if (instance) instance.pause();
+	});
+
+	// Reset any zoomed images inside this modal
+	modalEl.querySelectorAll('img.zoomable.zoomed').forEach((img) => {
+		img.classList.remove('zoomed');
+	});
+});
+
+// When sliding carousels inside modals, reset zoom state on images
+document.addEventListener('slide.bs.carousel', (e) => {
+	const carouselEl = e.target;
+	if (!carouselEl) return;
+	carouselEl.querySelectorAll('img.zoomable.zoomed').forEach((img) => {
+		img.classList.remove('zoomed');
 	});
 });
 
