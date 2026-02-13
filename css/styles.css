@@ -208,6 +208,28 @@
   transform-origin: center center;
 }
 
+/* Secciones amplias: hacer que el bloque de características aproveche mejor el ancho */
+@media (min-width: 992px) {
+  #caracteristicas .container {
+    max-width: 1320px;
+  }
+}
+@media (min-width: 1200px) {
+  #caracteristicas .container.px-5 {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+}
+
+/* En móviles, reducir padding lateral global de los container px-5
+   para que el contenido se vea más ancho en pantalla */
+@media (max-width: 575.98px) {
+  .container.px-5 {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+}
+
 /* Navbar overlay on hero */
 .navbar-hero {
   position: absolute;
