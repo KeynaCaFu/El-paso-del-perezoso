@@ -208,6 +208,16 @@
   transform-origin: center center;
 }
 
+/* Thumbnails in Planta Alta / Planta Baja feature section */
+.feature-thumb {
+  height: 150px;
+}
+@media (min-width: 992px) {
+  .feature-thumb {
+    height: 210px;
+  }
+}
+
 /* Secciones amplias: hacer que el bloque de características aproveche mejor el ancho */
 @media (min-width: 992px) {
   #caracteristicas .container {
