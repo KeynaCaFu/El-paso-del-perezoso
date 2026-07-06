@@ -288,7 +288,7 @@ h1, h2, h3, h4, .display-font {
 }
 @media (max-width: 991.98px) {
   .hero.hero-responsive {
-    background-image: url('../assets/fondoVertical.png') !important;
+    background-image: url('../assets/FONDOV.png') !important;
     background-size: cover;
     background-position: center top;
     background-color: var(--canopy-dark);
