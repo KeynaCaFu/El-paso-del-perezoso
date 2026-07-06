@@ -438,9 +438,95 @@ section { padding: 5rem 0; position: relative; }
   font-weight: 600;
   margin: 1.4rem 0 0.6rem;
 }
-.floor-thumb-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
-.photo-preview-grid { align-items: stretch; }
-.photo-thumb-wide { grid-column: span 2; min-height: 100%; }
+
+/* ============================================================
+   FOTOS DE CABAÑA Y PLANTAS - TAMAÑO GRANDE CUADRADO COMO GALERÍA
+   ============================================================ */
+
+/* --- Fotos de la cabaña (sección #fotos) --- */
+.photo-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+.photo-preview-grid .floor-thumb {
+  aspect-ratio: 1/1;
+  min-height: 220px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background-size: cover;
+  background-position: center;
+  cursor: zoom-in;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.photo-preview-grid .floor-thumb:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-lift);
+}
+.photo-preview-grid .photo-thumb-wide {
+  grid-column: span 2;
+  min-height: 220px;
+}
+
+/* --- Planta baja y planta alta (sección #caracteristicas) --- */
+.floor-thumb-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+.floor-thumb-grid .floor-thumb {
+  aspect-ratio: 1/1;
+  min-height: 200px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background-size: cover;
+  background-position: center;
+  cursor: zoom-in;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.floor-thumb-grid .floor-thumb:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-lift);
+}
+
+/* --- Responsive --- */
+@media (max-width: 991px) {
+  .photo-preview-grid .photo-thumb-wide {
+    grid-column: span 1;
+  }
+  .photo-preview-grid .floor-thumb {
+    min-height: 200px;
+  }
+  .floor-thumb-grid .floor-thumb {
+    min-height: 180px;
+  }
+}
+
+@media (max-width: 767px) {
+  .photo-preview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .photo-preview-grid .floor-thumb {
+    min-height: 180px;
+  }
+  .floor-thumb-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .floor-thumb-grid .floor-thumb {
+    min-height: 170px;
+  }
+}
+
+@media (max-width: 575px) {
+  .photo-preview-grid .floor-thumb {
+    min-height: 160px;
+  }
+  .floor-thumb-grid .floor-thumb {
+    min-height: 150px;
+  }
+}
+
+/* --- Estilos de la tarjeta de introducción (NO CAMBIAR) --- */
 .photo-intro-card {
   display: flex;
   flex-direction: column;
@@ -474,19 +560,6 @@ section { padding: 5rem 0; position: relative; }
   font-size: 0.82rem;
   font-weight: 600;
   border: 1px solid rgba(124, 148, 115, 0.2);
-}
-.floor-thumb {
-  aspect-ratio: 4/3;
-  border-radius: 12px;
-  background-size: cover;
-  background-position: center;
-  cursor: zoom-in;
-  border: 1px solid var(--line);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.floor-thumb:hover { transform: scale(1.04); box-shadow: var(--shadow-soft); }
-@media (max-width: 991px) {
-  .photo-thumb-wide { grid-column: span 1; }
 }
 
 /* Galería */
