@@ -1,218 +1,382 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Request availability for El Paso del Perezoso cabin." />
-    <meta name="author" content="El Paso del Perezoso" />
-    <title>Request Availability - El Paso del Perezoso</title>
-    <link rel="icon" type="image/png" href="../assets/icono3.png" />
+    <meta name="description" content="Request availability to book the El Paso del Perezoso cabin in Cariari, Limón." />
+    <title>Request availability · El Paso del Perezoso</title>
+
+    <link rel="icon" type="image/png" href="assets/icono3.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <!-- Alternate languages -->
-    <link rel="alternate" hreflang="en" href="contact.html" />
-    <link rel="alternate" hreflang="es" href="../contact.html" />
+
+    <link rel="alternate" hreflang="es" href="contact.html" />
+    <link rel="alternate" hreflang="en" href="en/contact.html" />
     <link rel="alternate" hreflang="x-default" href="contact.html" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../css/styles.css" rel="stylesheet" />
-  </head>
-  <body class="d-flex flex-column">
-    <main class="flex-shrink-0">
-      <nav class="navbar navbar-expand-xl navbar-light bg-white py-3">
-        <div class="container-fluid px-4 px-md-5">
-          <a class="navbar-brand" href="index.html"><img src="../assets/logo.png" alt="El Paso del Perezoso" style="height: 50px; width: auto;" /></a>
-          <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
-              <li class="nav-item"><a class="nav-link" href="index.html#features">Features</a></li>
-              <li class="nav-item"><a class="nav-link" href="index.html#details">Details</a></li>
-              <li class="nav-item"><a class="nav-link" href="index.html#gallery">Gallery</a></li>
-              <li class="nav-item"><a class="nav-link" href="index.html#faq">Frequently Asked Questions</a></li>
-              <li class="nav-item"><a class="nav-link" href="index.html#location">Location</a></li>
-              
-              <li class="nav-item"><a class="nav-link" href="contact.html">Book</a></li>
-              <li class="nav-item ms-2">
-                <div class="lang-switch" aria-label="Language selector">
-                  <a href="../contact.html" aria-label="Español">🇪🇸 ES</a>
-                  <a href="contact.html" class="active" aria-label="English">EN 🇬🇧</a>
-                </div>
-              </li>
+    <style>
+        /* Ajustes propios de esta página */
+        body { background: var(--paper); }
+        .booking-hero {
+            padding: 8.5rem 0 3rem;
+            background: var(--canopy-dark);
+            color: #fff;
+            text-align: center;
+        }
+        .booking-hero .eyebrow { justify-content: center; }
+        .booking-hero h1 { color: #fff; font-size: clamp(1.9rem, 5vw, 2.8rem); margin: 0.5rem 0 0.75rem; }
+        .booking-hero p { color: rgba(242,241,231,0.78); max-width: 560px; margin: 0 auto; }
+
+        .steps-row { display: flex; flex-wrap: wrap; gap: 0.9rem; justify-content: center; margin-top: 2rem; }
+        .step-chip {
+            font-family: var(--font-mono); font-size: 0.78rem; font-weight: 600;
+            background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2);
+            color: #fff; padding: 0.55rem 1rem; border-radius: 100px;
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        .step-chip b { color: var(--gold-light); }
+
+        .booking-wrap { margin-top: -2.5rem; padding-bottom: 5rem; }
+        .booking-card { padding: 2.25rem 1.5rem; }
+        @media (min-width: 768px) { .booking-card { padding: 3rem; } }
+
+        .form-floating > label { color: var(--ink-soft); }
+        .form-control, .form-select {
+            border-radius: 12px;
+            border: 1.5px solid var(--line);
+            padding-top: 1.2rem;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: var(--canopy);
+            box-shadow: 0 0 0 0.2rem rgba(30,58,42,0.15);
+        }
+        .form-floating { margin-bottom: 1.1rem; }
+        .form-control.is-invalid, .form-select.is-invalid { border-color: #c0392b; }
+
+        .btn-submit {
+            background: var(--gold);
+            color: var(--canopy-dark);
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 0.95rem;
+            border-radius: 100px;
+            border: 0;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 10px 26px rgba(199,154,62,0.35);
+        }
+        .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(199,154,62,0.45); }
+        .btn-submit i { margin-right: 0.5rem; }
+
+        .success-box {
+            background: rgba(30,58,42,0.08);
+            border: 1px solid rgba(30,58,42,0.25);
+            color: var(--canopy-dark);
+            border-radius: 14px;
+            padding: 1rem 1.25rem;
+        }
+
+        .side-note {
+            background: var(--canopy);
+            color: #fff;
+            border-radius: var(--radius);
+            padding: 2rem;
+            height: 100%;
+        }
+        .side-note h3 { color: #fff; font-size: 1.2rem; }
+        .side-note ul { list-style: none; padding: 0; margin: 1.25rem 0 0; }
+        .side-note li { display: flex; gap: 0.65rem; padding: 0.55rem 0; border-bottom: 1px solid rgba(255,255,255,0.14); font-size: 0.92rem; }
+        .side-note li:last-child { border-bottom: none; }
+        .side-note i { color: var(--gold-light); margin-top: 0.15rem; }
+        .side-note a.wa-link {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            margin-top: 1.5rem; font-weight: 700; color: var(--gold-light);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV (idéntico al de index.html) -->
+    <nav class="nav-nature scrolled" id="mainNav">
+        <div class="container-nature">
+            <a href="../index.html" class="nav-brand">
+                <img src="../assets/logo.png" alt="El Paso del Perezoso" />
+                <span>El Paso del Perezoso</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="../index.html#sobre">About</a></li>
+                <li><a href="../index.html#caracteristicas">The Cabin</a></li>
+                <li><a href="../index.html#galeria">Gallery</a></li>
+                <li><a href="../index.html#detalles">Services</a></li>
+                <li><a href="../index.html#faq">FAQ</a></li>
+                <li><a href="../index.html#ubicacion">Location</a></li>
             </ul>
-          </div>
-        </div>
-      </nav>
-      <section class="py-5">
-        <div class="container px-5">
-          <div class="bg-light rounded-4 py-5 px-4 px-md-5">
-            <div class="text-center mb-5">
-              <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="bi bi-calendar-event"></i></div>
-              <h1 class="fw-bolder">Request Cabin Availability</h1>
-              <p class="lead fw-normal text-muted mb-0">Complete the form to request a stay at El Paso del Perezoso</p>
-            </div>
-            <div class="row gx-5 justify-content-center">
-              <div class="col-lg-8 col-xl-6">
-                <form id="bookingForm">
-                  <div class="form-floating mb-3">
-                    <input class="form-control" id="fullName" type="text" placeholder="Full name" required />
-                    <label for="fullName">Full Name</label>
-                  </div>
-                  <div class="form-floating mb-3">
-                    <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" required />
-                    <label for="phone">Phone</label>
-                  </div>
-                  <div class="form-floating mb-3">
-                    <input class="form-control" id="checkIn" type="date" min="" required />
-                    <label for="checkIn">Check-in Date</label>
-                  </div>
-                  <div class="form-floating mb-3">
-                    <input class="form-control" id="checkOut" type="date" required />
-                    <label for="checkOut">Check-out Date</label>
-                  </div>
-                  <div class="form-floating mb-3">
-                    <select class="form-control" id="guests" required>
-                      <option value="">Select number of guests</option>
-                      <option value="1">1 Guest</option>
-                      <option value="2">2 Guests</option>
-                      <option value="3">3 Guests</option>
-                      <option value="4">4 Guests</option>
-                      <option value="5">5+ Guests</option>
-                    </select>
-                    <label for="guests">Guests</label>
-                  </div>
-                  <div class="form-floating mb-3">
-                    <textarea class="form-control" id="requests" placeholder="Special requests or questions..." style="height: 8rem"></textarea>
-                    <label for="requests">Special Requests</label>
-                  </div>
-                  <div class="d-grid"><button class="btn btn-primary btn-lg" id="submitButton" type="submit">Send Request</button></div>
-                </form>
-                <div class="alert alert-success mt-3 d-none" id="successMessage">
-                  <strong>Thanks!</strong> Your reservation request was received. We'll contact you soon.
+
+            <div class="nav-actions">
+                <div class="lang-pill">
+                    <a href="../contact.html" aria-label="Spanish">🇪🇸 ES</a>
+                    <a href="contact.html" class="active" aria-label="English">EN 🇬🇧</a>
                 </div>
-              </div>
+                <a href="contact.html" class="btn-reserva-nav">Check availability</a>
+                <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
+                    <span class="burger-lines"><span></span><span></span><span></span></span>
+                </button>
             </div>
-          </div>
         </div>
-      </section>
+    </nav>
+
+    <div class="mobile-panel" id="mobilePanel">
+        <a href="../index.html" data-close>Home</a>
+        <a href="../index.html#sobre" data-close>About</a>
+        <a href="../index.html#caracteristicas" data-close>The Cabin</a>
+        <a href="../index.html#galeria" data-close>Gallery</a>
+        <a href="../index.html#detalles" data-close>Services</a>
+        <a href="../index.html#faq" data-close>FAQ</a>
+        <a href="../index.html#ubicacion" data-close>Location</a>
+        <a href="contact.html" class="btn-reserva-nav">Check availability</a>
+    </div>
+
+    <main>
+        <header class="booking-hero">
+            <div class="container-nature">
+                <span class="eyebrow">Book via WhatsApp</span>
+                <h1>Request availability</h1>
+                <p>Fill out the form and we'll message you on WhatsApp to confirm dates, rates, and details for your stay or day visit.</p>
+                <div class="steps-row">
+                    <span class="step-chip"><b>1</b> Fill out the form</span>
+                    <span class="step-chip"><b>2</b> WhatsApp opens with your request</span>
+                    <span class="step-chip"><b>3</b> We confirm dates and price</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="booking-wrap">
+            <div class="container-nature">
+                <div class="row gy-4 justify-content-center">
+                    <div class="col-lg-4 reveal">
+                        <div class="side-note">
+                            <span class="rounded-pill-tag" style="background:rgba(255,255,255,0.14);color:#fff;">
+                                <i class="bi bi-info-circle"></i> Before sending
+                            </span>
+                            <h3 class="mt-3">Have this ready</h3>
+                            <ul>
+                                <li><i class="bi bi-calendar-check"></i> Tentative check-in and check-out dates</li>
+                                <li><i class="bi bi-people"></i> Number of guests</li>
+                                <li><i class="bi bi-chat-dots"></i> Whether it's a day visit or overnight stay</li>
+                                <li><i class="bi bi-heart"></i> If you're traveling with a pet</li>
+                            </ul>
+                            <a class="wa-link" href="https://wa.me/50688834349" target="_blank"><i class="bi bi-whatsapp"></i> I prefer to write directly on WhatsApp</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7 reveal">
+                        <div class="card-nature booking-card">
+                            <form id="bookingForm" novalidate>
+                                <div class="form-floating">
+                                    <input class="form-control" id="fullName" type="text" placeholder="Full name" required />
+                                    <label for="fullName">Full name</label>
+                                </div>
+
+                                <div class="form-floating">
+                                    <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" required />
+                                    <label for="phone">Phone number</label>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-floating">
+                                            <input class="form-control" id="checkIn" type="date" min="" required />
+                                            <label for="checkIn">Check-in date</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-floating">
+                                            <input class="form-control" id="checkOut" type="date" required />
+                                            <label for="checkOut">Check-out date</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-floating">
+                                    <select class="form-select" id="guests" required>
+                                        <option value="">Select number of guests</option>
+                                        <option value="1">1 guest</option>
+                                        <option value="2">2 guests</option>
+                                        <option value="3">3 guests</option>
+                                        <option value="4">4 guests</option>
+                                        <option value="5">5+ guests</option>
+                                    </select>
+                                    <label for="guests">Number of guests</label>
+                                </div>
+
+                                <div class="form-floating">
+                                    <textarea class="form-control" id="requests" placeholder="Special requirements or questions..." style="height: 8rem"></textarea>
+                                    <label for="requests">Special requests</label>
+                                </div>
+
+                                <div class="d-grid mt-2">
+                                    <button class="btn-submit" id="submitButton" type="submit"><i class="bi bi-whatsapp"></i>Send request via WhatsApp</button>
+                                </div>
+                            </form>
+
+                            <div class="success-box mt-3 d-none" id="successMessage">
+                                <strong>Thank you!</strong> Your request has been received. WhatsApp will open to confirm the details with you.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-    <footer class="bg-white py-4 mt-auto border-top">
-      <div class="container px-5">
-        <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-          <div class="col-auto"><div class="small m-0 text-muted">Copyright © 2024 El Paso del Perezoso. All rights reserved.</div></div>
-          <div class="col-auto">
-            <a class="small text-decoration-none me-2" href="index.html">Home</a>
-            <span class="mx-1 text-muted">·</span>
-            <a class="small text-decoration-none mx-2" href="contact.html">Book</a>
-          </div>
+
+    <footer class="site-footer">
+        <div class="container-nature">
+            <div class="row align-items-center gy-3">
+                <div class="col-md-6 d-flex align-items-center gap-2">
+                    <img src="../assets/logo.png" alt="El Paso del Perezoso" style="height:38px;width:auto;">
+                    <span class="small">© 2025 El Paso del Perezoso. All rights reserved.</span>
+                </div>
+                <div class="col-md-6 text-md-end footer-links">
+                    <a href="../index.html">Home</a>·
+                    <a href="../index.html#detalles">Services</a>·
+                    <a href="contact.html">Book</a>
+                </div>
+            </div>
         </div>
-      </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <a class="wa-fab" href="https://wa.me/50688834349" target="_blank" aria-label="Write on WhatsApp"><i class="bi bi-whatsapp"></i></a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      // Utilities
-      function getToday() {
+    (function(){
+        // Mobile menu
+        var burger = document.getElementById('burgerBtn');
+        var panel = document.getElementById('mobilePanel');
+        burger.addEventListener('click', function(){
+            var open = panel.classList.toggle('open');
+            burger.classList.toggle('is-open', open);
+            burger.setAttribute('aria-expanded', open);
+        });
+        panel.querySelectorAll('[data-close]').forEach(function(a){
+            a.addEventListener('click', function(){
+                panel.classList.remove('open');
+                burger.classList.remove('is-open');
+            });
+        });
+
+        // Reveal on scroll
+        var io = new IntersectionObserver(function(entries){
+            entries.forEach(function(e){
+                if (e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }
+            });
+        }, {threshold: 0.1});
+        document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+    })();
+
+    // ---------- Booking logic (unchanged) ----------
+
+    // Utilities
+    function getToday() {
         const today = new Date();
         const year = today.getFullYear();
         const month = String(today.getMonth() + 1).padStart(2, '0');
         const day = String(today.getDate()).padStart(2, '0');
         return `${year}-${month}-${day}`;
-      }
+    }
 
-      function formatDateForDisplay(dateString) {
+    function formatDateForDisplay(dateString) {
         return new Date(dateString).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-      }
+    }
 
-      // Create error elements if they don't exist
-      function createErrorElements() {
+    // Create error elements if not exist
+    function createErrorElements() {
         const checkInContainer = document.getElementById('checkIn').parentElement;
         const checkOutContainer = document.getElementById('checkOut').parentElement;
-        
-        if (!document.getElementById('checkInError')) {
-          const checkInError = document.createElement('small');
-          checkInError.id = 'checkInError';
-          checkInError.className = 'text-danger d-block mt-1';
-          checkInContainer.appendChild(checkInError);
-        }
-        
-        if (!document.getElementById('checkOutError')) {
-          const checkOutError = document.createElement('small');
-          checkOutError.id = 'checkOutError';
-          checkOutError.className = 'text-danger d-block mt-1';
-          checkOutContainer.appendChild(checkOutError);
-        }
-      }
 
-      // Validate dates in real time
-      function validateDates() {
+        if (!document.getElementById('checkInError')) {
+            const checkInError = document.createElement('small');
+            checkInError.id = 'checkInError';
+            checkInError.className = 'text-danger d-block mt-1';
+            checkInContainer.appendChild(checkInError);
+        }
+
+        if (!document.getElementById('checkOutError')) {
+            const checkOutError = document.createElement('small');
+            checkOutError.id = 'checkOutError';
+            checkOutError.className = 'text-danger d-block mt-1';
+            checkOutContainer.appendChild(checkOutError);
+        }
+    }
+
+    // Validate dates in real time
+    function validateDates() {
         const checkIn = document.getElementById('checkIn');
         const checkOut = document.getElementById('checkOut');
         const checkInError = document.getElementById('checkInError');
         const checkOutError = document.getElementById('checkOutError');
         const today = getToday();
-        
+
         let isValid = true;
-        
-        // Clear previous errors
+
         checkInError.textContent = '';
         checkOutError.textContent = '';
         checkIn.classList.remove('is-invalid');
         checkOut.classList.remove('is-invalid');
-        
-        // Validate check-in date
-        if (checkIn.value) {
-          if (checkIn.value < today) {
-            checkInError.textContent = 'Check-in cannot be in the past';
-            checkIn.classList.add('is-invalid');
-            isValid = false;
-          }
-        }
-        
-        // Validate check-out date
-        if (checkOut.value) {
-          if (!checkIn.value || checkOut.value <= checkIn.value) {
-            if (!checkIn.value) {
-              checkOutError.textContent = 'Select check-in date first';
-            } else {
-              checkOutError.textContent = 'Check-out must be after check-in';
-            }
-            checkOut.classList.add('is-invalid');
-            isValid = false;
-          } else if (checkOut.value < today) {
-            checkOutError.textContent = 'Check-out cannot be in the past';
-            checkOut.classList.add('is-invalid');
-            isValid = false;
-          }
-        }
-        
-        return isValid;
-      }
 
-      document.addEventListener('DOMContentLoaded', function () {
+        if (checkIn.value) {
+            if (checkIn.value < today) {
+                checkInError.textContent = 'Check-in date cannot be before today';
+                checkIn.classList.add('is-invalid');
+                isValid = false;
+            }
+        }
+
+        if (checkOut.value) {
+            if (!checkIn.value || checkOut.value <= checkIn.value) {
+                if (!checkIn.value) {
+                    checkOutError.textContent = 'Please select a check-in date first';
+                } else {
+                    checkOutError.textContent = 'Check-out date must be after check-in date';
+                }
+                checkOut.classList.add('is-invalid');
+                isValid = false;
+            } else if (checkOut.value < today) {
+                checkOutError.textContent = 'Check-out date cannot be before today';
+                checkOut.classList.add('is-invalid');
+                isValid = false;
+            }
+        }
+
+        return isValid;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
         const today = getToday();
         const checkInInput = document.getElementById('checkIn');
         const checkOutInput = document.getElementById('checkOut');
-        
+
         checkInInput.setAttribute('min', today);
         checkOutInput.setAttribute('min', today);
-        
+
         createErrorElements();
-        
-        // Event listeners for real-time validation
+
         checkInInput.addEventListener('change', validateDates);
         checkOutInput.addEventListener('change', validateDates);
-      });
+    });
 
-      document.getElementById('bookingForm').addEventListener('submit', function (e) {
+    // Booking form handler
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
         e.preventDefault();
-        
-        // Validate dates before submitting
+
         if (!validateDates()) {
-          alert('Please correct the date errors');
-          return;
+            alert('Please correct the date errors');
+            return;
         }
-        
+
         const fullName = document.getElementById('fullName').value;
         const phone = document.getElementById('phone').value;
         const checkIn = document.getElementById('checkIn').value;
@@ -220,31 +384,46 @@
         const guests = document.getElementById('guests').value;
         const requests = document.getElementById('requests').value;
 
-        const message = `*NEW BOOKING - EL PASO DEL PEREZOSO*\n\n*Guest:*\nName: ${fullName}\nPhone: ${phone}\n\n*Stay:*\nCheck-in: ${formatDateForDisplay(checkIn)}\nCheck-out: ${formatDateForDisplay(checkOut)}\nGuests: ${guests}\n\n*Special Requests:*\n${requests || 'None'}`;
+        const mensaje = `*NEW BOOKING - EL PASO DEL PEREZOSO*
+
+*Guest Details:*
+Name: ${fullName}
+Phone: ${phone}
+
+*Booking Details:*
+Check-in: ${formatDateForDisplay(checkIn)}
+Check-out: ${formatDateForDisplay(checkOut)}
+Number of Guests: ${guests}
+
+*Special Requests:*
+${requests || 'None'}`;
 
         const numeroWhatsApp = '50688834349';
+
         if (!numeroWhatsApp || numeroWhatsApp.length < 10) {
-          alert('Error: Invalid WhatsApp number');
-          return;
+            alert('Error: Invalid WhatsApp number');
+            return;
         }
-        const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(message)}`;
+
+        const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
 
         const successMsg = document.getElementById('successMessage');
         successMsg.classList.remove('d-none');
+
         document.getElementById('bookingForm').reset();
         document.getElementById('checkInError').textContent = '';
         document.getElementById('checkOutError').textContent = '';
         document.getElementById('checkIn').classList.remove('is-invalid');
         document.getElementById('checkOut').classList.remove('is-invalid');
-        
-        setTimeout(() => window.open(urlWhatsApp, '_blank'), 500);
-        setTimeout(() => successMsg.classList.add('d-none'), 4000);
-      });
+
+        setTimeout(() => {
+            window.open(urlWhatsApp, '_blank');
+        }, 500);
+
+        setTimeout(() => {
+            successMsg.classList.add('d-none');
+        }, 4000);
+    });
     </script>
-    <!-- Floating language switch (mobile) -->
-    <div class="lang-switch lang-switch-fab" aria-label="Floating language selector">
-      <a href="../contact.html" aria-label="Español">🇪🇸 ES</a>
-      <a href="contact.html" class="active" aria-label="English">EN 🇬🇧</a>
-    </div>
-  </body>
+</body>
 </html>

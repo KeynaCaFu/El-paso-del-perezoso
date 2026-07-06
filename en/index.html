@@ -1,620 +1,704 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Wooden cabin in nature near Tortuguero. Private pond, garden, mini farm, and nature trails." />
-    <meta name="author" content="El Paso del Perezoso" />
-    <title>El Paso del Perezoso Cabin</title>
-    <link rel="icon" type="image/png" href="../assets/icono3.png" />
+    <meta name="description" content="Wooden cabin in nature near Tortuguero, Costa Rica. Private pond, garden, mini farm, and nature trails. Perfect for a day escape or to stay overnight with family, couple, or friends." />
+    <title>El Paso del Perezoso Cabin · Pococí, Costa Rica</title>
+
+    <link rel="icon" type="image/png" href="../assets/logoMejoradoP.png" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <!-- Alternate languages -->
+
     <link rel="alternate" hreflang="es" href="../index.html" />
     <link rel="alternate" hreflang="en" href="index.html" />
     <link rel="alternate" hreflang="x-default" href="../index.html" />
-    <!-- Bootstrap icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap) -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../css/styles.css" rel="stylesheet" />
-  </head>
-  <body class="d-flex flex-column h-100">
-    <main class="flex-shrink-0">
-      <!-- Header with overlaid Navbar -->
-      <header class="py-5 hero-header hero-lg hero-parallax text-white" id="home" style="background-image: url('../img/cabaña.jpg');">
-        <nav class="navbar navbar-expand-lg navbar-dark navbar-hero py-3">
-          <div class="container px-5">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-              <img src="../assets/logo.png" alt="El Paso del Perezoso" style="height: 64px; width: auto;" />
-              <span class="brand-title ms-2">El Paso del Perezoso Cabin</span>
+</head>
+<body>
+
+    <!-- Trail progress bar -->
+    <div id="trail"><div id="trail-fill"></div></div>
+    <div class="trail-rail"><div class="trail-marker" id="trailMarker"><i class="bi bi-tree-fill" style="font-size:.6rem;color:#7C9473;"></i></div></div>
+
+    <!-- NAV -->
+    <nav class="nav-nature" id="mainNav">
+        <div class="container-nature">
+            <a href="index.html" class="nav-brand">
+                <img src="../assets/logo.png" alt="El Paso del Perezoso" />
+                <span>El Paso del Perezoso</span>
             </a>
-            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#sobre">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#caracteristicas">Features</a></li>
-                <li class="nav-item"><a class="nav-link" href="#detalles">Details</a></li>
-                <li class="nav-item"><a class="nav-link" href="#galeria">Gallery</a></li>
-                <li class="nav-item"><a class="nav-link" href="#faq">Frequently Asked Questions</a></li>
-                <li class="nav-item"><a class="nav-link" href="#ubicacion">Location</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Check availability</a></li>
-                <li class="nav-item ms-2">
-                  <div class="lang-switch" aria-label="Language selector">
-                    <a href="../index.html" aria-label="Español">🇪🇸 ES</a>
+
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">The Cabin</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#details">Services</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#location">Location</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <div class="lang-pill">
+                    <a href="../index.html" aria-label="Spanish">🇪🇸 ES</a>
                     <a href="index.html" class="active" aria-label="English">EN 🇬🇧</a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-         </nav>
-        <div class="container px-5 pb-5 pt-5">
-          <div class="row gx-5 align-items-center justify-content-center">
-            <div class="col-xxl-7">
-              <div class="text-center">
-                <div class="fs-3 fw-light text-white text-shadow-lg">Welcome to your perfect retreat</div>
-                <h1 class="hero-title display-4 fw-bold mb-4">El Paso del Perezoso Cabin</h1>
-                <!-- <p class="lead mb-4">A fully equipped wooden cabin immersed in nature—ideal for couples, families, or friends seeking peace and a genuine rural experience.</p> -->
-                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center mb-3">
-                  <a class="btn btn-reserva" href="contact.html">Check availability</a>
-                  <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="#caracteristicas">See details</a>
                 </div>
-              </div>
+                <a href="contact.html" class="btn-reserva-nav">Check availability</a>
+                <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
+                    <span class="burger-lines"><span></span><span></span><span></span></span>
+                </button>
             </div>
-          </div>
         </div>
-      </header>
-      <!-- About -->
-      <section class="py-5 bg-light" id="sobre">
-        <div class="container px-5">
-          <div class="row gx-5 justify-content-center mb-4">
-            <div class="col-xxl-8 text-center">
-              <h2 class="display-6 fw-bolder mb-3"><span class="text-gradient d-inline">About the Space</span></h2>
-              <p class="lead fw-light mb-4">A wooden cabin surrounded by nature and tranquility—perfect for a stop on the way to or from Tortuguero National Park. Relax and enjoy the simple beauty of our home.</p>
-              <img src="../assets/logo.png" alt="El Paso del Perezoso" style="max-width: 150px; height: auto;">
-            </div>
-          </div>
-          
-        </div>
-      </section>
-      <!-- Lightbox Modals -->
-      <div class="modal fade" id="modalPlantaAlta" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-          <div class="modal-content bg-black bg-opacity-75 border-0">
-            <div class="modal-body p-0 position-relative">
-              <div id="lightboxPlantaAlta" class="carousel slide" data-bs-ride="false" data-bs-keyboard="true">
-                <div class="carousel-inner">
-                  <div class="carousel-item active"><img src="../img/cama1A.jpg" class="d-block w-100 zoomable" alt="Upper floor - bedroom bed 1" loading="lazy" style="max-height: 80vh; object-fit: contain;" /></div>
-                  <div class="carousel-item"><img src="../img/cama2A.jpg" class="d-block w-100 zoomable" alt="Upper floor - bedroom bed 2" loading="lazy" style="max-height: 80vh; object-fit: contain;" /></div>
-                  <div class="carousel-item"><img src="../img/pilaA.jpg" class="d-block w-100 zoomable" alt="Upper floor - bedroom details" loading="lazy" style="max-height: 80vh; object-fit: contain;" /></div>
-                  <div class="carousel-item"><img src="../img/2.jpg" class="d-block w-100 zoomable" alt="Upper floor - bathroom 1" loading="lazy" style="max-height: 80vh; object-fit: contain;" /></div>
-                  <div class="carousel-item"><img src="../img/5.jpg" class="d-block w-100 zoomable" alt="Upper floor - bathroom 2" loading="lazy" style="max-height: 80vh; object-fit: contain;" /></div>
-                  <div class="carousel-item"><img src="../img/7.jpg" class="d-block w-100 zoomable" alt="Upper floor - bathroom 3" loading="lazy" style="max-height: 80vh; object-fit: contain;" /></div>
-                  <div class="carousel-item"><img src="../img/9.jpg" class="d-block w-100 zoomable" alt="Upper floor - balcony 1" loading="lazy" style="max-height: 80vh; object-fit: contain;" /></div>
-                  <div class="carousel-item"><img src="../img/balconA.jpg" class="d-block w-100 zoomable" alt="Upper floor - balcony 2" loading="lazy" style="max-height: 80vh; object-fit: contain;" /></div>
-                  <div class="carousel-item"><img src="../img/1756493810569.jpg" class="d-block w-100 zoomable" alt="Upper floor - balcony 3" loading="lazy" style="max-height: 80vh; object-fit: contain;" /></div>
-                  <div class="carousel-item"><img src="../img/18.jpg" class="d-block w-100 zoomable" alt="Upper floor - balcony 4" loading="lazy" style="max-height: 80vh; object-fit: contain;" /></div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#lightboxPlantaAlta" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
-                <button class="carousel-control-next" type="button" data-bs-target="#lightboxPlantaAlta" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    </nav>
 
-      <div class="modal fade" id="modalPlantaBaja" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-          <div class="modal-content bg-black bg-opacity-75 border-0">
-            <div class="modal-body p-0 position-relative">
-              <div id="lightboxPlantaBaja" class="carousel slide" data-bs-ride="false" data-bs-keyboard="true">
-                <div class="carousel-inner">
-                  <div class="carousel-item active"><img src="../img/17.jpg" class="d-block w-100 zoomable" alt="Lower floor - bedroom 1" loading="lazy" style="max-height: 80vh; object-fit: contain;" /></div>
-                  <div class="carousel-item"><img src="../img/16.jpg" class="d-block w-100 zoomable" alt="Lower floor - bedroom 2" loading="lazy" style="max-height: 80vh; object-fit: contain;" /></div>
-                  <div class="carousel-item"><img src="../img/14.jpg" class="d-block w-100 zoomable" alt="Lower floor - bedroom 3" loading="lazy" style="max-height: 80vh; object-fit: contain;" /></div>
-                  <div class="carousel-item"><img src="../img/sala.jpg" class="d-block w-100 zoomable" alt="Lower floor - living room 1" loading="lazy" style="max-height: 80vh; object-fit: contain;"></div>
-                  <div class="carousel-item"><img src="../img/sala2.jpg" class="d-block w-100 zoomable" alt="Lower floor - living room 2" loading="lazy" style="max-height: 80vh; object-fit: contain;"></div>
-                  <div class="carousel-item"><img src="../img/sala3.jpg" class="d-block w-100 zoomable" alt="Lower floor - living room 3" loading="lazy" style="max-height: 80vh; object-fit: contain;"></div>
-                  <div class="carousel-item"><img src="../img/sala4.jpg" class="d-block w-100 zoomable" alt="Lower floor - living room 4" loading="lazy" style="max-height: 80vh; object-fit: contain;"></div>
-                  <div class="carousel-item"><img src="../img/6.jpg" class="d-block w-100 zoomable" alt="Lower floor - living room detail" loading="lazy" style="max-height: 80vh; object-fit: contain;"></div>
-                  <div class="carousel-item"><img src="../img/Cocina.jpg" class="d-block w-100 zoomable" alt="Lower floor - kitchen" loading="lazy" style="max-height: 80vh; object-fit: contain;"></div>
-                  <div class="carousel-item"><img src="../img/refri.jpg" class="d-block w-100 zoomable" alt="Lower floor - fridge" loading="lazy" style="max-height: 80vh; object-fit: contain;"></div>
-                  <div class="carousel-item"><img src="../img/8.jpg" class="d-block w-100 zoomable" alt="Lower floor - bathroom 1" loading="lazy" style="max-height: 80vh; object-fit: contain;"></div>
-                  <div class="carousel-item"><img src="../img/5.jpg" class="d-block w-100 zoomable" alt="Lower floor - bathroom 2" loading="lazy" style="max-height: 80vh; object-fit: contain;"></div>
-                  <div class="carousel-item"><img src="../img/2.jpg" class="d-block w-100 zoomable" alt="Lower floor - bathroom 3" loading="lazy" style="max-height: 80vh; object-fit: contain;"></div>
-                  <div class="carousel-item"><img src="../img/7.jpg" class="d-block w-100 zoomable" alt="Lower floor - bathroom 4" loading="lazy" style="max-height: 80vh; object-fit: contain;"></div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#lightboxPlantaBaja" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
-                <button class="carousel-control-next" type="button" data-bs-target="#lightboxPlantaBaja" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Characteristics Section-->
-      <section class="py-5" id="caracteristicas">
-        <div class="container px-5">
-          <div class="row gx-5 justify-content-center mb-5">
-            <div class="col-xxl-8">
-              <div class="text-center">
-                <h2 class="display-5 fw-bolder mb-4"><span class="text-gradient d-inline">Cabin Features</span></h2>
-                <p class="lead fw-light mb-4">Two-story property fully prepared for your comfort</p>
-              </div>
-            </div>
-          </div>
-          <div class="row gx-5 mb-4">
-            <div class="col-12 mb-4">
-              <div class="card border-0 shadow-lg h-100">
-                <div class="card-body p-5">
-                  <h5 class="card-title fw-bolder mb-3 fs-3">🛏️ Upper Floor</h5>
-                  <ul class="list-unstyled mb-3">
-                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Large bedroom</li>
-                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>3 comfortable beds</li>
-                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Private bathroom</li>
-                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Wide terrace with views</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-12">
-              <div class="shadow-lg rounded-3 bg-white p-4 h-100">
-                <!-- Bedroom -->
-                <div class="mb-4">
-                  <h6 class="fw-bolder mb-2">Bedroom</h6>
-                  <div class="row g-2">
-                    <div class="col-6 col-md-4">
-                      <a href="#" class="lightbox-trigger d-block" data-modal="modalPlantaAlta" data-index="0" aria-label="View upper floor bedroom photo in large size">
-                        <div class="rounded-3 border feature-thumb" style="background-image: url('../img/cama1A.jpg'); background-size: cover; background-position: center;"></div>
-                      </a>
-                    </div>
-                    <div class="col-6 col-md-4">
-                      <a href="#" class="lightbox-trigger d-block" data-modal="modalPlantaAlta" data-index="1" aria-label="View upper floor bedroom photo in large size">
-                        <div class="rounded-3 border feature-thumb" style="background-image: url('../img/cama2A.jpg'); background-size: cover; background-position: center;"></div>
-                      </a>
-                    </div>
-                    <div class="col-6 col-md-4">
-                      <a href="#" class="lightbox-trigger d-block" data-modal="modalPlantaAlta" data-index="2" aria-label="View upper floor bedroom photo in large size">
-                        <div class="rounded-3 border feature-thumb" style="background-image: url('../img/pilaA.jpg'); background-size: cover; background-position: center;"></div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <!-- Full bathroom -->
-                <div class="mb-4">
-                  <h6 class="fw-bolder mb-2">Full bathroom</h6>
-                  <div class="row g-2">
-                    <div class="col-6 col-md-4">
-                      <a href="#" class="lightbox-trigger d-block" data-modal="modalPlantaAlta" data-index="3" aria-label="View upper floor bathroom photo in large size">
-                        <div class="rounded-3 border feature-thumb" style="background-image: url('../img/2.jpg'); background-size: cover; background-position: center;"></div>
-                      </a>
-                    </div>
-                    <div class="col-6 col-md-4">
-                      <a href="#" class="lightbox-trigger d-block" data-modal="modalPlantaAlta" data-index="4" aria-label="View upper floor bathroom photo in large size">
-                        <div class="rounded-3 border feature-thumb" style="background-image: url('../img/5.jpg'); background-size: cover; background-position: center;"></div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <!-- Balcony -->
-                <div>
-                  <h6 class="fw-bolder mb-2">Balcony</h6>
-                  <div class="row g-2">
-                    <div class="col-6 col-md-4">
-                      <a href="#" class="lightbox-trigger d-block" data-modal="modalPlantaAlta" data-index="6" aria-label="View balcony photo in large size">
-                        <div class="rounded-3 border feature-thumb" style="background-image: url('../img/9.jpg'); background-size: cover; background-position: center;"></div>
-                      </a>
-                    </div>
-                    <div class="col-6 col-md-4">
-                      <a href="#" class="lightbox-trigger d-block" data-modal="modalPlantaAlta" data-index="7" aria-label="View balcony photo in large size">
-                        <div class="rounded-3 border feature-thumb" style="background-image: url('../img/balconA.jpg'); background-size: cover; background-position: center;"></div>
-                      </a>
-                    </div>
-                    <div class="col-6 col-md-4">
-                      <a href="#" class="lightbox-trigger d-block" data-modal="modalPlantaAlta" data-index="8" aria-label="View balcony photo in large size">
-                        <div class="rounded-3 border feature-thumb" style="background-image: url('../img/1756493810569.jpg'); background-size: cover; background-position: center;"></div>
-                      </a>
-                    </div>
-                    <div class="col-6 col-md-4">
-                      <a href="#" class="lightbox-trigger d-block" data-modal="modalPlantaAlta" data-index="9" aria-label="View balcony photo in large size">
-                        <div class="rounded-3 border feature-thumb" style="background-image: url('../img/18.jpg'); background-size: cover; background-position: center;"></div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row gx-5 align-items-start mt-4">
-            <div class="col-12 mb-4">
-              <div class="card border-0 shadow-lg h-100">
-                <div class="card-body p-5">
-                  <h5 class="card-title fw-bolder mb-3 fs-3">🛋️ Lower Floor</h5>
-                  <ul class="list-unstyled mb-3">
-                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Spacious living room</li>
-                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Fully equipped kitchen</li>
-                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Additional room</li>
-                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Full bathroom</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-12">
-              <div class="shadow-lg rounded-3 bg-white p-4 h-100">
-                <!-- Ground floor bedroom -->
-                <div class="mb-4">
-                  <h6 class="fw-bolder mb-2">Ground floor bedroom</h6>
-                  <div class="row g-2">
-                    <div class="col-6 col-md-4">
-                      <a href="#" class="lightbox-trigger d-block" data-modal="modalPlantaBaja" data-index="0" aria-label="View ground floor bedroom photo in large size">
-                        <div class="rounded-3 border feature-thumb" style="background-image: url('../img/17.jpg'); background-size: cover; background-position: center;"></div>
-                      </a>
-                    </div>
-                    <div class="col-6 col-md-4">
-                      <a href="#" class="lightbox-trigger d-block" data-modal="modalPlantaBaja" data-index="1" aria-label="View ground floor bedroom photo in large size">
-                        <div class="rounded-3 border feature-thumb" style="background-image: url('../img/16.jpg'); background-size: cover; background-position: center;"></div>
-                      </a>
-                    </div>
-                    <div class="col-6 col-md-4">
-                      <a href="#" class="lightbox-trigger d-block" data-modal="modalPlantaBaja" data-index="2" aria-label="View ground floor bedroom photo in large size">
-                        <div class="rounded-3 border feature-thumb" style="background-image: url('../img/14.jpg'); background-size: cover; background-position: center;"></div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <!-- Living room -->
-                <div class="mb-4">
-                  <h6 class="fw-bolder mb-2">Living room</h6>
-                  <div class="row g-2">
-                    <div class="col-6 col-md-4">
-                      <a href="#" class="lightbox-trigger d-block" data-modal="modalPlantaBaja" data-index="3" aria-label="View living room photo in large size">
-                        <div class="rounded-3 border feature-thumb" style="background-image: url('../img/sala.jpg'); background-size: cover; background-position: center;"></div>
-                      </a>
-                    </div>
-                    <div class="col-6 col-md-4">
-                      <a href="#" class="lightbox-trigger d-block" data-modal="modalPlantaBaja" data-index="4" aria-label="View living room photo in large size">
-                        <div class="rounded-3 border feature-thumb" style="background-image: url('../img/sala2.jpg'); background-size: cover; background-position: center;"></div>
-                      </a>
-                    </div>
-                    <div class="col-6 col-md-4">
-                      <a href="#" class="lightbox-trigger d-block" data-modal="modalPlantaBaja" data-index="5" aria-label="View living room photo in large size">
-                        <div class="rounded-3 border feature-thumb" style="background-image: url('../img/sala3.jpg'); background-size: cover; background-position: center;"></div>
-                      </a>
-                    </div>
-                    <div class="col-6 col-md-4">
-                      <a href="#" class="lightbox-trigger d-block" data-modal="modalPlantaBaja" data-index="6" aria-label="View living room photo in large size">
-                        <div class="rounded-3 border feature-thumb" style="background-image: url('../img/sala4.jpg'); background-size: cover; background-position: center;"></div>
-                      </a>
-                    </div>
-                    <div class="col-6 col-md-4">
-                      <a href="#" class="lightbox-trigger d-block" data-modal="modalPlantaBaja" data-index="7" aria-label="View living room photo in large size">
-                        <div class="rounded-3 border feature-thumb" style="background-image: url('../img/6.jpg'); background-size: cover; background-position: center;"></div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <!-- Kitchen -->
-                <div class="mb-4">
-                  <h6 class="fw-bolder mb-2">Kitchen</h6>
-                  <div class="row g-2">
-                    <div class="col-6 col-md-4">
-                      <a href="#" class="lightbox-trigger d-block" data-modal="modalPlantaBaja" data-index="8" aria-label="View kitchen photo in large size">
-                        <div class="rounded-3 border feature-thumb" style="background-image: url('../img/Cocina.jpg'); background-size: cover; background-position: center;"></div>
-                      </a>
-                    </div>
-                    <div class="col-6 col-md-4">
-                      <a href="#" class="lightbox-trigger d-block" data-modal="modalPlantaBaja" data-index="9" aria-label="View kitchen photo in large size">
-                        <div class="rounded-3 border feature-thumb" style="background-image: url('../img/refri.jpg'); background-size: cover; background-position: center;"></div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <!-- Full bathroom (lower floor) -->
-                <div>
-                  <h6 class="fw-bolder mb-2">Full bathroom</h6>
-                  <div class="row g-2">
-                    <div class="col-6 col-md-4">
-                      <a href="#" class="lightbox-trigger d-block" data-modal="modalPlantaBaja" data-index="10" aria-label="View ground floor bathroom photo in large size">
-                        <div class="rounded-3 border feature-thumb" style="background-image: url('../img/8.jpg'); background-size: cover; background-position: center;"></div>
-                      </a>
-                    </div>
-                    <div class="col-6 col-md-4">
-                      <a href="#" class="lightbox-trigger d-block" data-modal="modalPlantaBaja" data-index="11" aria-label="View ground floor bathroom photo in large size">
-                        <div class="rounded-3 border feature-thumb" style="background-image: url('../img/5.jpg'); background-size: cover; background-position: center;"></div>
-                      </a>
-                    </div>
-                    <div class="col-6 col-md-4">
-                      <a href="#" class="lightbox-trigger d-block" data-modal="modalPlantaBaja" data-index="12" aria-label="View ground floor bathroom photo in large size">
-                        <div class="rounded-3 border feature-thumb" style="background-image: url('../img/2.jpg'); background-size: cover; background-position: center;"></div>
-                      </a>
-                    </div>
-                    <div class="col-6 col-md-4">
-                      <a href="#" class="lightbox-trigger d-block" data-modal="modalPlantaBaja" data-index="13" aria-label="View ground floor bathroom photo in large size">
-                        <div class="rounded-3 border feature-thumb" style="background-image: url('../img/7.jpg'); background-size: cover; background-position: center;"></div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Gallery -->
-      <section class="py-5" id="galeria">
-        <div class="container px-5">
-          <div class="row gx-5 justify-content-center mb-5">
-            <div class="col-xxl-8">
-              <div class="text-center">
-                <h2 class="display-5 fw-bolder mb-4"><span class="text-gradient d-inline">Gallery</span></h2>
-                <p class="lead fw-light mb-4">Explore the spaces of our cabin</p>
-              </div>
-            </div>
-          </div>
-          <div class="row gx-4 gy-4">
-            <h6 class="fw-bolder mb-2">Garden</h6>
-
-            <div class="col-md-6 col-lg-4">
-              <a href="#" class="lightbox-trigger d-block rounded-3 overflow-hidden shadow-lg" data-modal="modalGallery" data-index="0" aria-label="Open gallery image 1">
-                <div class="gallery-item" style="min-height: 250px; background-image: url('../img/jardinNoche.jpg'); background-size: cover; background-position: center;"></div>
-              </a>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-              <a href="#" class="lightbox-trigger d-block rounded-3 overflow-hidden shadow-lg" data-modal="modalGallery" data-index="1" aria-label="Open gallery image 2">
-                <div class="gallery-item" style="min-height: 250px; background-image: url('../img/mesaA.jpg'); background-size: cover; background-position: center;"></div>
-              </a>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-              <a href="#" class="lightbox-trigger d-block rounded-3 overflow-hidden shadow-lg" data-modal="modalGallery" data-index="2" aria-label="Open gallery image 3">
-                <div class="gallery-item" style="min-height: 250px; background-image: url('../img/1756493810569.jpg'); background-size: cover; background-position: center;"></div>
-              </a>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-              <a href="#" class="lightbox-trigger d-block rounded-3 overflow-hidden shadow-lg" data-modal="modalGallery" data-index="3" aria-label="Open gallery image 4">
-                <div class="gallery-item" style="min-height: 250px; background-image: url('../img/1756493810603.jpg'); background-size: cover; background-position: center;"></div>
-              </a>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <a href="#" class="lightbox-trigger d-block rounded-3 overflow-hidden shadow-lg" data-modal="modalGallery" data-index="4" aria-label="Open gallery image 5">
-                <div class="gallery-item" style="min-height: 250px; background-image: url('../img/1756431239857.jpg'); background-size: cover; background-position: center;"></div>
-              </a>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <a href="#" class="lightbox-trigger d-block rounded-3 overflow-hidden shadow-lg" data-modal="modalGallery" data-index="5" aria-label="Open gallery image 6">
-                <div class="gallery-item" style="min-height: 250px; background-image: url('../img/hoja 5.jpg'); background-size: cover; background-position: center;"></div>
-              </a>
-            </div>
-
-            <h6 class="fw-bolder mb-2">Wild animals</h6>
-            <div class="col-md-6 col-lg-4">
-              <a href="#" class="lightbox-trigger d-block rounded-3 overflow-hidden shadow-lg" data-modal="modalGallery" data-index="6" aria-label="Open gallery image 7">
-                <div class="gallery-item" style="min-height: 250px; background-image: url('../img/perezoso.jpg'); background-size: cover; background-position: center;"></div>
-              </a>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-              <a href="#" class="lightbox-trigger d-block rounded-3 overflow-hidden shadow-lg" data-modal="modalGallery" data-index="7" aria-label="Open gallery image 8">
-                <div class="gallery-item" style="min-height: 250px; background-image: url('../img/rana arbol.jpg'); background-size: cover; background-position: center;"></div>
-              </a>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-              <a href="#" class="lightbox-trigger d-block rounded-3 overflow-hidden shadow-lg" data-modal="modalGallery" data-index="8" aria-label="Open gallery image 9">
-                <div class="gallery-item" style="min-height: 250px; background-image: url('../img/perezosoG.jpg'); background-size: cover; background-position: center;"></div>
-              </a>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-              <a href="#" class="lightbox-trigger d-block rounded-3 overflow-hidden shadow-lg" data-modal="modalGallery" data-index="9" aria-label="Open gallery image 10">
-                <div class="gallery-item" style="min-height: 250px; background-image: url('../img/MONOCongo.jpg'); background-size: cover; background-position: center;"></div>
-              </a>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <a href="#" class="lightbox-trigger d-block rounded-3 overflow-hidden shadow-lg" data-modal="modalGallery" data-index="10" aria-label="Open gallery image 11">
-                <div class="gallery-item" style="min-height: 250px; background-image: url('../img/AVE.jpg'); background-size: cover; background-position: center;"></div>
-              </a>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-              <a href="#" class="lightbox-trigger d-block rounded-3 overflow-hidden shadow-lg" data-modal="modalGallery" data-index="11" aria-label="Open gallery image 12">
-                <div class="gallery-item" style="min-height: 250px; background-image: url('../img/Cherenga.jpg'); background-size: cover; background-position: center;"></div>
-              </a>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-              <a href="#" class="lightbox-trigger d-block rounded-3 overflow-hidden shadow-lg" data-modal="modalGallery" data-index="12" aria-label="Open gallery image 13">
-                <div class="gallery-item" style="min-height: 250px; background-image: url('../img/basi.jpeg'); background-size: cover; background-position: center;"></div>
-              </a>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-              <a href="#" class="lightbox-trigger d-block rounded-3 overflow-hidden shadow-lg" data-modal="modalGallery" data-index="13" aria-label="Open gallery image 14">
-                <div class="gallery-item" style="min-height: 250px; background-image: url('../img/ranaCafe.jpeg'); background-size: cover; background-position: center;"></div>
-              </a>
-            </div>
-
-            <h6 class="fw-bolder mb-2">Our animals</h6>
-            <div class="col-md-6 col-lg-4">
-              <a href="#" class="lightbox-trigger d-block rounded-3 overflow-hidden shadow-lg" data-modal="modalGallery" data-index="14" aria-label="Open gallery image 15">
-                <div class="gallery-item" style="min-height: 250px; background-image: url('../img/ganzo.jpg'); background-size: cover; background-position: center;"></div>
-              </a>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <a href="#" class="lightbox-trigger d-block rounded-3 overflow-hidden shadow-lg" data-modal="modalGallery" data-index="15" aria-label="Open gallery image 16">
-                <div class="gallery-item" style="min-height: 250px; background-image: url('../img/ganzos.jpg'); background-size: cover; background-position: center;"></div>
-              </a>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <a href="#" class="lightbox-trigger d-block rounded-3 overflow-hidden shadow-lg" data-modal="modalGallery" data-index="16" aria-label="Open gallery image 17">
-                <div class="gallery-item" style="min-height: 250px; background-image: url('../img/patos.jpg'); background-size: cover; background-position: center;"></div>
-              </a>
-            </div>
-
-            <h6 class="fw-bolder mb-2">Our pond</h6>
-
-            <div class="col-md-6 col-lg-4">
-              <a href="#" class="lightbox-trigger d-block rounded-3 overflow-hidden shadow-lg" data-modal="modalGallery" data-index="17" aria-label="Open gallery image 18">
-                <div class="gallery-item" style="min-height: 250px; background-image: url('../img/puenten.jpg'); background-size: cover; background-position: center;"></div>
-              </a>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-              <a href="#" class="lightbox-trigger d-block rounded-3 overflow-hidden shadow-lg" data-modal="modalGallery" data-index="18" aria-label="Open gallery image 19">
-                <div class="gallery-item" style="min-height: 250px; background-image: url('../img/puente.jpg'); background-size: cover; background-position: center;"></div>
-              </a>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-              <a href="#" class="lightbox-trigger d-block rounded-3 overflow-hidden shadow-lg" data-modal="modalGallery" data-index="19" aria-label="Open gallery image 20">
-                <div class="gallery-item" style="min-height: 250px; background-image: url('../img/lagoGanzos.jpg'); background-size: cover; background-position: center;"></div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Gallery Modal (lightbox) -->
-      <div class="modal fade" id="modalGallery" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-          <div class="modal-content bg-black bg-opacity-75 border-0">
-            <div class="modal-body p-0 position-relative">
-              <div id="lightboxGallery" class="carousel slide" data-bs-ride="false" data-bs-keyboard="true">
-                <div class="carousel-inner">
-                  <div class="carousel-item active"><img src="../img/1756493810569.jpg" class="d-block w-100 zoomable" alt="Gallery 1" loading="lazy"></div>
-                  <div class="carousel-item"><img src="../img/1756493810603.jpg" class="d-block w-100 zoomable" alt="Gallery 2" loading="lazy"></div>
-                  <div class="carousel-item"><img src="../img/1756431239857.jpg" class="d-block w-100 zoomable" alt="Gallery 3" loading="lazy"></div>
-                  <div class="carousel-item"><img src="../img/hoja 5.jpg" class="d-block w-100 zoomable" alt="Gallery 4" loading="lazy"></div>
-                  <div class="carousel-item"><img src="../img/perezoso.jpg" class="d-block w-100 zoomable" alt="Gallery 5" loading="lazy"></div>
-                  <div class="carousel-item"><img src="../img/ganzo.jpg" class="d-block w-100 zoomable" alt="Gallery 6" loading="lazy"></div>
-                  <div class="carousel-item"><img src="../img/ganzos.jpg" class="d-block w-100 zoomable" alt="Gallery 7" loading="lazy"></div>
-                  <div class="carousel-item"><img src="../img/patos.jpg" class="d-block w-100 zoomable" alt="Gallery 8" loading="lazy"></div>
-                  <div class="carousel-item"><img src="../img/rana arbol.jpg" class="d-block w-100 zoomable" alt="Gallery 9" loading="lazy"></div>
-                  <div class="carousel-item"><img src="../img/perezosoG.jpg" class="d-block w-100 zoomable" alt="Gallery 10" loading="lazy"></div>
-                  <div class="carousel-item"><img src="../img/jardinNoche.jpg" class="d-block w-100 zoomable" alt="Gallery 11" loading="lazy"></div>
-                  <div class="carousel-item"><img src="../img/mesaA.jpg" class="d-block w-100 zoomable" alt="Gallery 12" loading="lazy"></div>
-                  <div class="carousel-item"><img src="../img/MONOCongo.jpg" class="d-block w-100 zoomable" alt="Gallery 13" loading="lazy"></div>
-                  <div class="carousel-item"><img src="../img/AVE.jpg" class="d-block w-100 zoomable" alt="Gallery 14" loading="lazy"></div>
-                  <div class="carousel-item"><img src="../img/Cherenga.jpg" class="d-block w-100 zoomable" alt="Gallery 15" loading="lazy"></div>
-                  <div class="carousel-item"><img src="../img/puenten.jpg" class="d-block w-100 zoomable" alt="Gallery 16" loading="lazy"></div>
-                  <div class="carousel-item"><img src="../img/puente.jpg" class="d-block w-100 zoomable" alt="Gallery 17" loading="lazy"></div>
-                  <div class="carousel-item"><img src="../img/lagoGanzos.jpg" class="d-block w-100 zoomable" alt="Gallery 18" loading="lazy"></div>
-                  <div class="carousel-item"><img src="../img/basi.jpeg" class="d-block w-100 zoomable" alt="Gallery 19" loading="lazy"></div>
-                  <div class="carousel-item"><img src="../img/ranaCafe.jpeg" class="d-block w-100 zoomable" alt="Gallery 20" loading="lazy"></div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#lightboxGallery" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
-                <button class="carousel-control-next" type="button" data-bs-target="#lightboxGallery" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Details -->
-      <section class="py-5" id="detalles">
-        <div class="container px-5">
-          <div class="row gx-5 justify-content-center mb-5">
-            <div class="col-xxl-8 text-center">
-              <h2 class="display-5 fw-bolder mb-4"><span class="text-gradient d-inline">What this place offers</span></h2>
-              <!-- <p class="lead fw-light mb-4">Organized by category for quick reference.</p> -->
-            </div>
-          </div>
-          <div class="row gx-5 gy-4">
-            <div class="col-md-6 col-lg-4"><div class="card border-0 shadow-sm h-100"><div class="card-body p-4"><h3 class="h6 text-uppercase text-muted mb-3">Scenic views</h3><ul class="list-unstyled mb-0"><li class="mb-2"><i class="bi bi-image-alt text-primary me-2"></i>Lake view</li><li class="mb-2"><i class="bi bi-flower1 text-primary me-2"></i>Garden view</li><li class="mb-2"><i class="bi bi-tree text-primary me-2"></i>Patio view</li><li class="mb-0"><i class="bi bi-triangle text-primary me-2"></i>Mountain view</li></ul></div></div></div>
-            <div class="col-md-6 col-lg-4"><div class="card border-0 shadow-sm h-100"><div class="card-body p-4"><h3 class="h6 text-uppercase text-muted mb-3">Bathroom</h3><ul class="list-unstyled mb-0"><li class="mb-2"><i class="bi bi-bucket text-primary me-2"></i>Cleaning products</li><li class="mb-0"><i class="bi bi-droplet text-primary me-2"></i>Shower gel</li></ul></div></div></div>
-            <div class="col-md-6 col-lg-4"><div class="card border-0 shadow-sm h-100"><div class="card-body p-4"><h3 class="h6 text-uppercase text-muted mb-3">Bedroom and laundry</h3><ul class="list-unstyled mb-0"><li class="mb-2"><i class="bi bi-check-circle text-primary me-2"></i>Essentials (towels, bed sheets, soap, toilet paper)</li><li class="mb-2"><i class="bi bi-check-circle text-primary me-2"></i>Bedding</li><li class="mb-2"><i class="bi bi-check-circle text-primary me-2"></i>Extra pillows and blankets</li><li class="mb-0"><i class="bi bi-shield-check text-primary me-2"></i>Mosquito net</li></ul></div></div></div>
-            <div class="col-md-6 col-lg-4"><div class="card border-0 shadow-sm h-100"><div class="card-body p-4"><h3 class="h6 text-uppercase text-muted mb-3">Heating and cooling</h3><ul class="list-unstyled mb-0"><li class="mb-0"><i class="bi bi-fan text-primary me-2"></i>Portable fans</li></ul></div></div></div>
-            <div class="col-md-6 col-lg-4"><div class="card border-0 shadow-sm h-100"><div class="card-body p-4"><h3 class="h6 text-uppercase text-muted mb-3">Kitchen and dining</h3><ul class="list-unstyled mb-0"><li class="mb-2"><i class="bi bi-egg-fried text-primary me-2"></i>Basic cooking items (pots, pans, oil, salt & pepper)</li><li class="mb-2"><i class="bi bi-collection text-primary me-2"></i>Dishes and silverware</li><li class="mb-2"><i class="bi bi-fire text-primary me-2"></i>Wood-fired stove (outdoor)</li><li class="mb-2"><i class="bi bi-cup-hot text-primary me-2"></i>Coffee maker & coffee</li><li class="mb-2"><i class="bi bi-basket text-primary me-2"></i>BBQ utensils</li><li class="mb-0"><i class="bi bi-table text-primary me-2"></i>Dining table</li></ul></div></div></div>
-            <div class="col-md-6 col-lg-4"><div class="card border-0 shadow-sm h-100"><div class="card-body p-4"><h3 class="h6 text-uppercase text-muted mb-3">Location features</h3><ul class="list-unstyled mb-0"><li class="mb-2"><i class="bi bi-water text-primary me-2"></i>Lake access (trail or dock)</li><li class="mb-0"><i class="bi bi-door-closed text-primary me-2"></i>Private entrance</li></ul></div></div></div>
-            <div class="col-md-6 col-lg-4"><div class="card border-0 shadow-sm h-100"><div class="card-body p-4"><h3 class="h6 text-uppercase text-muted mb-3">Outdoor</h3><ul class="list-unstyled mb-0"><li class="mb-2"><i class="bi bi-building text-primary me-2"></i>Terrace or balcony</li><li class="mb-2"><i class="bi bi-bounding-box text-primary me-2"></i>Private garden with perimeter fence</li><li class="mb-2"><i class="bi bi-chair text-primary me-2"></i>Outdoor furniture</li><li class="mb-2"><i class="bi bi-emoji-smile text-primary me-2"></i>Hammock</li><li class="mb-0"><i class="bi bi-sun text-primary me-2"></i>Outdoor dining area</li></ul></div></div></div>
-            <div class="col-md-6 col-lg-4"><div class="card border-0 shadow-sm h-100"><div class="card-body p-4"><h3 class="h6 text-uppercase text-muted mb-3">Parking & facilities</h3><ul class="list-unstyled mb-0"><li class="mb-0"><i class="bi bi-car-front text-primary me-2"></i>Free parking on premises</li></ul></div></div></div>
-            <div class="col-md-6 col-lg-4"><div class="card border-0 shadow-sm h-100"><div class="card-body p-4"><h3 class="h6 text-uppercase text-muted mb-3">Services</h3><ul class="list-unstyled mb-0"><li class="mb-0"><i class="bi bi-heart text-primary me-2"></i>Pets allowed</li></ul></div></div></div>
-            <!-- Activities & experiences (from Amenities) -->
-            <div class="col-md-6 col-lg-4"><div class="card border-0 shadow-sm h-100"><div class="card-body p-4"><h3 class="h6 text-uppercase text-muted mb-3">Activities & experiences</h3><ul class="list-unstyled mb-0"><li class="mb-2"><i class="bi bi-tree text-primary me-2"></i>Mini farm: unique rural experience</li><li class="mb-2"><i class="bi bi-flower1 text-primary me-2"></i>Nature trails: native vegetation & wildlife</li><li class="mb-0"><i class="bi bi-binoculars text-primary me-2"></i>Birdwatching in natural habitat</li></ul></div></div></div>
-          </div>
-        </div>
-      </section>
-      
-      <!-- Not included -->
-      <section class="py-5 bg-white" id="not-included">
-        <div class="container px-5">
-          <div class="row gx-5 justify-content-center mb-4"><div class="col-xxl-8 text-center"><h2 class="display-6 fw-bolder mb-3"><span class="text-gradient d-inline">Not included</span></h2></div></div>
-          <div class="row gx-5 gy-4">
-            <div class="col-md-4"><div class="d-flex align-items-start"><i class="bi bi-wifi-off text-danger me-3 fs-3"></i><div><h6 class="mb-1">Wi‑Fi</h6><small class="text-muted">Rural area with limited signal</small></div></div></div>
-            <div class="col-md-4"><div class="d-flex align-items-start"><i class="bi bi-tv text-danger me-3 fs-3"></i><div><h6 class="mb-1">TV</h6><small class="text-muted">Focus on nature and rest</small></div></div></div>
-            <div class="col-md-4"><div class="d-flex align-items-start"><i class="bi bi-wind text-danger me-3 fs-3"></i><div><h6 class="mb-1">Air conditioning</h6><small class="text-muted">Replaced by fans</small></div></div></div>
-            <div class="col-md-4"><div class="d-flex align-items-start"><i class="bi bi-basket2-x text-danger me-3 fs-3"></i><div><h6 class="mb-1">Washer & dryer</h6><small class="text-muted">Not available for guests</small></div></div></div>
-            <div class="col-md-4"><div class="d-flex align-items-start"><i class="bi bi-exclamation-octagon text-danger me-3 fs-3"></i><div><h6 class="mb-1">Smoke detector</h6><small class="text-muted">Not installed</small></div></div></div>
-            <div class="col-md-4"><div class="d-flex align-items-start"><i class="bi bi-exclamation-octagon-fill text-danger me-3 fs-3"></i><div><h6 class="mb-1">Carbon monoxide detector</h6><small class="text-muted">Host indicated not necessary</small></div></div></div>
-          </div>
-        </div>
-      </section>
-      <!-- Prices & Rules -->
-      <section class="py-5" id="pricing">
-        <div class="container px-5">
-          <div class="row gx-5 justify-content-center mb-5"><div class="col-xxl-8 text-center"><h2 class="display-5 fw-bolder mb-4"><span class="text-gradient d-inline">Prices & Rules</span></h2></div></div>
-          <div class="row gx-5 gy-4">
-            <div class="col-lg-6"><div class="card border-0 shadow-sm h-100"><div class="card-body p-4"><h3 class="h5 fw-bolder mb-3"><i class="bi bi-cash-coin text-primary me-2"></i>Prices</h3><ul class="text-muted mb-4"><li>Rates vary by season and number of guests.</li><li>Request your quote via WhatsApp from the booking page.</li><li>Multi-night stays may receive a discount depending on availability.</li></ul><a href="contact.html" class="btn btn-primary"><i class="bi bi-calendar-check me-2"></i>Request price & availability</a></div></div></div>
-            <div class="col-lg-6"><div class="card border-0 shadow-sm h-100"><div class="card-body p-4"><h3 class="h5 fw-bolder mb-3"><i class="bi bi-journal-check text-primary me-2"></i>House Rules</h3><ul class="mb-0"><li class="mb-2">No smoking inside the cabin (allowed in designated outdoor areas).</li><li class="mb-2">Pets are welcome; owners are responsible for any damage or extra cleaning.</li><li class="mb-2">Use the wood-fired stove only under host supervision.</li><li class="mb-0">For safety, always supervise children, especially near the pond.</li></ul></div></div></div>
-          </div>
-        </div>
-      </section>
-      
-      <!-- Frequently Asked Questions -->
-      <section class="py-5 bg-light" id="faq">
-        <div class="container px-5">
-          <div class="row gx-5 justify-content-center mb-4"><div class="col-xxl-8 text-center"><h2 class="display-6 fw-bolder mb-3"><span class="text-gradient d-inline">Frequently Asked Questions</span></h2><p class="lead fw-light mb-0">Quick answers about the stay and activities.</p></div></div>
-          <div class="accordion" id="faqAccordionEn">
-            <div class="accordion-item"><h2 class="accordion-header" id="q1en"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1en" aria-expanded="true" aria-controls="a1en">Is there Wi‑Fi or TV?</button></h2><div id="a1en" class="accordion-collapse collapse show" aria-labelledby="q1en" data-bs-parent="#faqAccordionEn"><div class="accordion-body">No. We aim for a nature disconnect experience. Portable fans are provided.</div></div></div>
-            <div class="accordion-item"><h2 class="accordion-header" id="q2en"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2en" aria-expanded="false" aria-controls="a2en">Are pets allowed?</button></h2><div id="a2en" class="accordion-collapse collapse" aria-labelledby="q2en" data-bs-parent="#faqAccordionEn"><div class="accordion-body">Yes, pets are welcome. Please let us know when booking; cleaning/care rules may apply.</div></div></div>
-            <div class="accordion-item"><h2 class="accordion-header" id="q3en"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3en" aria-expanded="false" aria-controls="a3en">Is the kitchen equipped?</button></h2><div id="a3en" class="accordion-collapse collapse" aria-labelledby="q3en" data-bs-parent="#faqAccordionEn"><div class="accordion-body">Yes. It has utensils, drinking water, microwave, refrigerator, small electric stove, pans, and a coffee maker. The outdoor wood-fired stove is used under supervision.</div></div></div>
-            <div class="accordion-item"><h2 class="accordion-header" id="q4en"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a4en" aria-expanded="false" aria-controls="a4en">Is there access to the pond?</button></h2><div id="a4en" class="accordion-collapse collapse" aria-labelledby="q4en" data-bs-parent="#faqAccordionEn"><div class="accordion-body">Yes, there is access via trail or dock. Please supervise children at all times.</div></div></div>
-            <div class="accordion-item"><h2 class="accordion-header" id="q5en"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a5en" aria-expanded="false" aria-controls="a5en">How do I book and pay?</button></h2><div id="a5en" class="accordion-collapse collapse" aria-labelledby="q5en" data-bs-parent="#faqAccordionEn"><div class="accordion-body">Request availability on our <a href="contact.html" class="fw-bold">booking page</a>. We confirm and coordinate details over WhatsApp.</div></div></div>
-          </div>
-        </div>
-      </section>
-      <!-- Location -->
-      <section class="py-5 bg-light" id="ubicacion">
-        <div class="container px-5">
-          <div class="row gx-5 justify-content-center mb-5"><div class="col-xxl-8"><div class="text-center"><h2 class="display-5 fw-bolder mb-4"><span class="text-gradient d-inline">Location</span></h2><p class="lead fw-light mb-4">Find our cabin in the heart of nature</p></div></div></div>
-          <div class="row gx-5 align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-              <div class="card border-0 shadow-lg h-100"><div class="card-body p-5"><h3 class="h5 fw-bolder mb-4"><i class="bi bi-geo-alt-fill text-primary me-2"></i>Location</h3><p class="mb-3"><a href="https://www.google.com/maps/place/10°22'26.6%22N+83°43'35.4%22W/@10.3740556,-83.7268889,17z/data=!3m1!4b1!4m4!3m3!8m2!3d10.3740556!4d-83.7268889?entry=ttu" target="_blank" class="text-decoration-none text-primary fw-bold">Limón, Pococí, Cariari</a></p><p class="mb-3"><a href="https://www.google.com/maps/place/10°22'26.6%22N+83°43'35.4%22W/@10.3740556,-83.7268889,17z/data=!3m1!4b1!4m4!3m3!8m2!3d10.3740556!4d-83.7268889?entry=ttu" target="_blank" class="text-decoration-none text-primary fw-bold">El Paso del Perezoso Cabin</a></p><small class="text-muted d-block mb-4">Click to open in Google Maps</small><a href="https://www.google.com/maps/place/10°22'26.6%22N+83°43'35.4%22W/@10.3740556,-83.7268889,17z/data=!3m1!4b1!4m4!3m3!8m2!3d10.3740556!4d-83.7268889?entry=ttu" target="_blank" class="btn btn-primary"><i class="bi bi-map me-2"></i>Open Google Maps</a></div></div>
-            </div>
-            <div class="col-lg-6"><div class="shadow-lg rounded-3 overflow-hidden" style="height: 400px;"><iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2235.6925265231675!2d-83.7272337190867!3d10.373949397918313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDIyJzI2LjYiTiA4M8KwNDMnMzUuNCJX!5e1!3m2!1ses-419!2scr!4v1770849034977!5m2!1ses-419!2scr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer class="bg-white py-4 mt-auto border-top">
-      <div class="container px-5">
-        <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-          <div class="col-auto">
-            <div class="d-flex align-items-center gap-2">
-              <img src="../assets/logo.png" alt="El Paso del Perezoso" style="height: 40px; width: auto;">
-              <div class="small m-0 text-muted">Copyright © 2025 El Paso del Perezoso. All rights reserved.</div>
-            </div>
-          </div>
-          <div class="col-auto">
-            <a class="small text-decoration-none me-2" href="#home">Home</a>
-            <span class="mx-1 text-muted">·</span>
-            <a class="small text-decoration-none mx-2" href="#caracteristicas">Features</a>
-            <span class="mx-1 text-muted">·</span>
-            <a class="small text-decoration-none mx-2" href="contact.html">Book</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/scripts.js"></script>
-    <!-- Floating language switch (mobile) -->
-    <div class="lang-switch lang-switch-fab" aria-label="Floating language selector">
-      <a href="../index.html" aria-label="Español">🇪🇸 ES</a>
-      <a href="index.html" class="active" aria-label="English">EN 🇬🇧</a>
+    <!-- Mobile menu -->
+    <div class="mobile-panel" id="mobilePanel">
+        <a href="#home" data-close>Home</a>
+        <a href="#about" data-close>About</a>
+        <a href="#features" data-close>The Cabin</a>
+        <a href="#gallery" data-close>Gallery</a>
+        <a href="#details" data-close>Services</a>
+        <a href="#faq" data-close>FAQ</a>
+        <a href="#location" data-close>Location</a>
+        <a href="contact.html" class="btn-reserva-nav">Check availability</a>
     </div>
-  </body>
+
+    <main>
+        <!-- HERO -->
+        <header class="hero hero-responsive" id="home" style="background-image: url('../assets/FONDOLARGOp.png');">
+            <div class="container-nature hero-content">
+                <span class="eyebrow">Cariari · one step from Tortuguero</span>
+                <h1>El Paso del Perezoso Cabin</h1>
+                <p class="hero-sub">Two wooden floors facing a private pond, surrounded by a garden, a mini farm, and forest trails. Perfect for a day escape or to stay several nights — with family, as a couple, or with friends.</p>
+                <div class="hero-ctas">
+                    <a href="contact.html" class="btn-primary-nature"><i class="bi bi-calendar-check"></i> Check availability</a>
+                    <a href="#features" class="btn-ghost-nature"><i class="bi bi-house-door"></i> Explore the cabin</a>
+                </div>
+                <div class="hero-facts">
+                    <span><i class="bi bi-layers"></i> 2 floors</span>
+                    <span><i class="bi bi-water"></i> Private pond</span>
+                    <span><i class="bi bi-signpost-split"></i> Nature trails</span>
+                    <span><i class="bi bi-heart"></i> Pet-friendly</span>
+                    <span><i class="bi bi-car-front"></i> Free parking</span>
+                </div>
+            </div>
+            <div class="scroll-cue"><i class="bi bi-chevron-down"></i></div>
+        </header>
+
+        <!-- ABOUT -->
+        <section id="about">
+            <div class="container-nature">
+                <div class="row align-items-center gy-4">
+                    <div class="col-lg-7 reveal">
+                        <span class="about-badge"><i class="bi bi-journal-text"></i> Field notes</span>
+                        <h2 class="section-title">A wooden retreat, surrounded by tropical forest</h2>
+                        <p class="section-lead">Here you can slow down: no TV or Wi-Fi competing for your attention, just the forest, a small pond, and a mini farm as your only agenda. Ideal as a stop on the way to Tortuguero, or as a destination in itself for a weekend with family, friends, or as a couple.</p>
+                    </div>
+                    <div class="col-lg-5 reveal">
+                        <div class="card-nature p-4">
+                            <div class="floor-group-title">At a glance</div>
+                            <ul class="floor-feature-list">
+                                <li><i class="bi bi-door-open"></i> Private, independent entrance</li>
+                                <li><i class="bi bi-tree"></i> Garden, mini farm, and nature trails</li>
+                                <li><i class="bi bi-binoculars"></i> Wildlife viewing in its natural habitat</li>
+                                <li><i class="bi bi-water"></i> Access to a small pond</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES -->
+        <section id="features" class="section-alt">
+            <div class="container-nature">
+                <div class="section-head text-center reveal">
+                    <span class="eyebrow" style="justify-content:center;">The cabin</span>
+                    <h2 class="section-title">Two floors, everything you need</h2>
+                    <p class="section-lead mx-auto">Explore each level of the cabin — tap the photos to see them larger.</p>
+                </div>
+
+                <div class="text-center reveal">
+                    <div class="floor-tabs" role="tablist">
+                        <button class="floor-tab active" data-floor="baja" role="tab" aria-selected="true">Lower floor</button>
+                        <button class="floor-tab" data-floor="alta" role="tab" aria-selected="false">Upper floor</button>
+                    </div>
+                </div>
+
+                <!-- UPPER FLOOR -->
+                <div class="floor-panel active" id="panel-alta">
+                    <div class="row gy-4">
+                        <div class="col-lg-4">
+                            <div class="card-nature p-4 h-100">
+                                <h3 class="floor-group-title" style="margin-top:0;">Includes</h3>
+                                <ul class="floor-feature-list">
+                                    <li><i class="bi bi-check-circle-fill"></i> Large bedroom with 3 comfortable beds</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Private bathroom</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Wide terrace with forest views</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="floor-group-title" style="margin-top:0;">Bedroom</div>
+                            <div class="floor-thumb-grid mb-3">
+                                <div class="floor-thumb lightbox-trigger" data-modal="modalPlantaAlta" data-index="0" style="background-image:url('../img/cama1A.jpg');"></div>
+                                <div class="floor-thumb lightbox-trigger" data-modal="modalPlantaAlta" data-index="1" style="background-image:url('../img/cama2A.jpg');"></div>
+                                <div class="floor-thumb lightbox-trigger" data-modal="modalPlantaAlta" data-index="2" style="background-image:url('../img/pilaA.jpg');"></div>
+                            </div>
+                            <div class="floor-group-title">Full bathroom</div>
+                            <div class="floor-thumb-grid mb-3">
+                                <div class="floor-thumb lightbox-trigger" data-modal="modalPlantaAlta" data-index="3" style="background-image:url('../img/2.jpg');"></div>
+                                <div class="floor-thumb lightbox-trigger" data-modal="modalPlantaAlta" data-index="4" style="background-image:url('../img/5.jpg');"></div>
+                            </div>
+                            <div class="floor-group-title">Balcony</div>
+                            <div class="floor-thumb-grid">
+                                <div class="floor-thumb lightbox-trigger" data-modal="modalPlantaAlta" data-index="6" style="background-image:url('../img/9.jpg');"></div>
+                                <div class="floor-thumb lightbox-trigger" data-modal="modalPlantaAlta" data-index="7" style="background-image:url('../img/balconA.jpg');"></div>
+                                <div class="floor-thumb lightbox-trigger" data-modal="modalPlantaAlta" data-index="8" style="background-image:url('../img/1756493810569.jpg');"></div>
+                                <div class="floor-thumb lightbox-trigger" data-modal="modalPlantaAlta" data-index="9" style="background-image:url('../img/18.jpg');"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LOWER FLOOR -->
+                <div class="floor-panel" id="panel-baja">
+                    <div class="row gy-4">
+                        <div class="col-lg-4">
+                            <div class="card-nature p-4 h-100">
+                                <h3 class="floor-group-title" style="margin-top:0;">Includes</h3>
+                                <ul class="floor-feature-list">
+                                    <li><i class="bi bi-check-circle-fill"></i> Spacious living room</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Fully equipped kitchen</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Additional bedroom</li>
+                                    <li><i class="bi bi-check-circle-fill"></i> Full bathroom</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="floor-group-title" style="margin-top:0;">Bedroom</div>
+                            <div class="floor-thumb-grid mb-3">
+                                <div class="floor-thumb lightbox-trigger" data-modal="modalPlantaBaja" data-index="0" style="background-image:url('../img/17.jpg');"></div>
+                                <div class="floor-thumb lightbox-trigger" data-modal="modalPlantaBaja" data-index="1" style="background-image:url('../img/16.jpg');"></div>
+                                <div class="floor-thumb lightbox-trigger" data-modal="modalPlantaBaja" data-index="2" style="background-image:url('../img/14.jpg');"></div>
+                            </div>
+                            <div class="floor-group-title">Living room</div>
+                            <div class="floor-thumb-grid mb-3">
+                                <div class="floor-thumb lightbox-trigger" data-modal="modalPlantaBaja" data-index="3" style="background-image:url('../img/sala.jpg');"></div>
+                                <div class="floor-thumb lightbox-trigger" data-modal="modalPlantaBaja" data-index="4" style="background-image:url('../img/sala2.jpg');"></div>
+                                <div class="floor-thumb lightbox-trigger" data-modal="modalPlantaBaja" data-index="5" style="background-image:url('../img/sala3.jpg');"></div>
+                                <div class="floor-thumb lightbox-trigger" data-modal="modalPlantaBaja" data-index="6" style="background-image:url('../img/sala4.jpg');"></div>
+                                <div class="floor-thumb lightbox-trigger" data-modal="modalPlantaBaja" data-index="7" style="background-image:url('../img/6.jpg');"></div>
+                            </div>
+                            <div class="floor-group-title">Kitchen</div>
+                            <div class="floor-thumb-grid mb-3">
+                                <div class="floor-thumb lightbox-trigger" data-modal="modalPlantaBaja" data-index="8" style="background-image:url('../img/Cocina.jpg');"></div>
+                                <div class="floor-thumb lightbox-trigger" data-modal="modalPlantaBaja" data-index="9" style="background-image:url('../img/refri.jpg');"></div>
+                            </div>
+                            <div class="floor-group-title">Full bathroom</div>
+                            <div class="floor-thumb-grid">
+                                <div class="floor-thumb lightbox-trigger" data-modal="modalPlantaBaja" data-index="10" style="background-image:url('../img/8.jpg');"></div>
+                                <div class="floor-thumb lightbox-trigger" data-modal="modalPlantaBaja" data-index="11" style="background-image:url('../img/5.jpg');"></div>
+                                <div class="floor-thumb lightbox-trigger" data-modal="modalPlantaBaja" data-index="12" style="background-image:url('../img/2.jpg');"></div>
+                                <div class="floor-thumb lightbox-trigger" data-modal="modalPlantaBaja" data-index="13" style="background-image:url('../img/7.jpg');"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY -->
+        <section id="gallery">
+            <div class="container-nature">
+                <div class="section-head text-center reveal">
+                    <span class="eyebrow" style="justify-content:center;">Field album</span>
+                    <h2 class="section-title">Gallery</h2>
+                    <p class="section-lead mx-auto">The garden, wildlife, our animals, and the pond — filter by category.</p>
+                </div>
+
+                <div class="filter-row justify-content-center reveal">
+                    <button class="filter-pill active" data-filter="all">All</button>
+                    <button class="filter-pill" data-filter="jardin">Garden</button>
+                    <button class="filter-pill" data-filter="fauna">Wildlife</button>
+                    <button class="filter-pill" data-filter="animales">Our animals</button>
+                    <button class="filter-pill" data-filter="lago">Our pond</button>
+                </div>
+
+                <div class="gallery-grid reveal" id="galleryGrid">
+                    <div class="gallery-item" data-cat="jardin" data-index="0" style="background-image:url('../img/jardinNoche.jpg');"></div>
+                    <div class="gallery-item" data-cat="jardin" data-index="1" style="background-image:url('../img/mesaA.jpg');"></div>
+                    <div class="gallery-item" data-cat="jardin" data-index="2" style="background-image:url('../img/1756493810569.jpg');"></div>
+                    <div class="gallery-item" data-cat="jardin" data-index="3" style="background-image:url('../img/1756493810603.jpg');"></div>
+                    <div class="gallery-item" data-cat="jardin" data-index="4" style="background-image:url('../img/1756431239857.jpg');"></div>
+                    <div class="gallery-item" data-cat="jardin" data-index="5" style="background-image:url('../img/hoja 5.jpg');"></div>
+
+                    <div class="gallery-item" data-cat="fauna" data-index="6" style="background-image:url('../img/perezoso.jpg');"></div>
+                    <div class="gallery-item" data-cat="fauna" data-index="7" style="background-image:url('../img/rana arbol.jpg');"></div>
+                    <div class="gallery-item" data-cat="fauna" data-index="8" style="background-image:url('../img/perezosoG.jpg');"></div>
+                    <div class="gallery-item" data-cat="fauna" data-index="9" style="background-image:url('../img/MONOCongo.jpg');"></div>
+                    <div class="gallery-item" data-cat="fauna" data-index="10" style="background-image:url('../img/AVE.jpg');"></div>
+                    <div class="gallery-item" data-cat="fauna" data-index="11" style="background-image:url('../img/Cherenga.jpg');"></div>
+                    <div class="gallery-item" data-cat="fauna" data-index="12" style="background-image:url('../img/basi.jpeg');"></div>
+                    <div class="gallery-item" data-cat="fauna" data-index="13" style="background-image:url('../img/ranaCafe.jpeg');"></div>
+
+                    <div class="gallery-item" data-cat="animales" data-index="14" style="background-image:url('../img/ganzo.jpg');"></div>
+                    <div class="gallery-item" data-cat="animales" data-index="15" style="background-image:url('../img/ganzos.jpg');"></div>
+                    <div class="gallery-item" data-cat="animales" data-index="16" style="background-image:url('../img/patos.jpg');"></div>
+
+                    <div class="gallery-item" data-cat="lago" data-index="17" style="background-image:url('../img/puenten.jpg');"></div>
+                    <div class="gallery-item" data-cat="lago" data-index="18" style="background-image:url('../img/puente.jpg');"></div>
+                    <div class="gallery-item" data-cat="lago" data-index="19" style="background-image:url('../img/lagoGanzos.jpg');"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DETAILS / SERVICES -->
+        <section id="details" class="section-alt">
+            <div class="container-nature">
+                <div class="section-head text-center reveal">
+                    <span class="eyebrow" style="justify-content:center;">What is included</span>
+                    <h2 class="section-title">Everything this place offers</h2>
+                </div>
+
+                <div class="row gy-4 reveal-stagger reveal">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card-nature amenity-card">
+                            <div class="amenity-icon"><i class="bi bi-binoculars"></i></div>
+                            <h3>Scenic views</h3>
+                            <ul>
+                                <li><i class="bi bi-image-alt"></i> Lake view, garden, patio, and mountain</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card-nature amenity-card">
+                            <div class="amenity-icon"><i class="bi bi-droplet"></i></div>
+                            <h3>Bathroom</h3>
+                            <ul>
+                                <li><i class="bi bi-bucket"></i> Cleaning products</li>
+                                <li><i class="bi bi-droplet"></i> Shower gel</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card-nature amenity-card">
+                            <div class="amenity-icon"><i class="bi bi-moon-stars"></i></div>
+                            <h3>Bedroom and laundry</h3>
+                            <ul>
+                                <li><i class="bi bi-check-circle"></i> Towels, bed sheets, soap, and toilet paper</li>
+                                <li><i class="bi bi-check-circle"></i> Extra pillows and blankets</li>
+                                <li><i class="bi bi-shield-check"></i> Mosquito net</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card-nature amenity-card">
+                            <div class="amenity-icon"><i class="bi bi-fan"></i></div>
+                            <h3>Heating and cooling</h3>
+                            <ul>
+                                <li><i class="bi bi-fan"></i> Portable fans</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card-nature amenity-card">
+                            <div class="amenity-icon"><i class="bi bi-egg-fried"></i></div>
+                            <h3>Kitchen and dining</h3>
+                            <ul>
+                                <li><i class="bi bi-egg-fried"></i> Pots, pans, oil, salt, and pepper</li>
+                                <li><i class="bi bi-collection"></i> Dishes and silverware</li>
+                                <li><i class="bi bi-fire"></i> Outdoor wood-fired stove</li>
+                                <li><i class="bi bi-cup-hot"></i> Coffee maker and coffee</li>
+                                <li><i class="bi bi-basket"></i> BBQ utensils</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card-nature amenity-card">
+                            <div class="amenity-icon"><i class="bi bi-door-closed"></i></div>
+                            <h3>Location</h3>
+                            <ul>
+                                <li><i class="bi bi-water"></i> Lake access via trail or dock</li>
+                                <li><i class="bi bi-door-closed"></i> Private entrance</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card-nature amenity-card">
+                            <div class="amenity-icon"><i class="bi bi-tree"></i></div>
+                            <h3>Outdoor</h3>
+                            <ul>
+                                <li><i class="bi bi-building"></i> Terrace or balcony</li>
+                                <li><i class="bi bi-bounding-box"></i> Private garden with fence</li>
+                                <li><i class="bi bi-emoji-smile"></i> Hammock and outdoor dining area</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card-nature amenity-card">
+                            <div class="amenity-icon"><i class="bi bi-car-front"></i></div>
+                            <h3>Parking</h3>
+                            <ul>
+                                <li><i class="bi bi-car-front"></i> Free on-premises parking</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card-nature amenity-card">
+                            <div class="amenity-icon"><i class="bi bi-heart"></i></div>
+                            <h3>Activities</h3>
+                            <ul>
+                                <li><i class="bi bi-tree"></i> Mini farm with animals</li>
+                                <li><i class="bi bi-flower1"></i> Nature trails</li>
+                                <li><i class="bi bi-binoculars"></i> Birdwatching</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOT INCLUDED -->
+        <section class="section-canopy" id="not-included">
+            <div class="container-nature">
+                <div class="section-head reveal">
+                    <span class="eyebrow">So you arrive prepared</span>
+                    <h2 class="section-title">What is not included</h2>
+                </div>
+                <div class="row reveal-stagger reveal">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="plain-item"><i class="bi bi-wifi-off"></i><div><h4>Wi-Fi</h4><p>Rural area with limited signal.</p></div></div>
+                        <div class="plain-item"><i class="bi bi-tv"></i><div><h4>TV</h4><p>The focus is on nature and rest.</p></div></div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="plain-item"><i class="bi bi-wind"></i><div><h4>Air conditioning</h4><p>Replaced with portable fans.</p></div></div>
+                        <div class="plain-item"><i class="bi bi-basket2-x"></i><div><h4>Washer and dryer</h4><p>Not available for guests.</p></div></div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="plain-item"><i class="bi bi-exclamation-octagon"></i><div><h4>Smoke detector</h4><p>Not installed.</p></div></div>
+                        <div class="plain-item"><i class="bi bi-exclamation-octagon-fill"></i><div><h4>Carbon monoxide detector</h4><p>The host indicated it is not necessary.</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICES AND RULES -->
+        <section id="pricing">
+            <div class="container-nature">
+                <div class="section-head text-center reveal">
+                    <span class="eyebrow" style="justify-content:center;">Before booking</span>
+                    <h2 class="section-title">Prices and rules</h2>
+                </div>
+                <div class="row gy-4 reveal-stagger reveal">
+                    <div class="col-lg-6">
+                        <div class="card-nature price-card h-100">
+                            <h3><i class="bi bi-cash-coin text-gold"></i> Prices</h3>
+                            <ul>
+                                <li>Rates vary by season and number of guests.</li>
+                                <li>Request your quote via WhatsApp from the booking page.</li>
+                                <li>Multi-night stays may receive a discount depending on availability.</li>
+                            </ul>
+                            <a href="contact.html" class="btn-primary-nature"><i class="bi bi-calendar-check"></i> Request price and availability</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card-nature price-card h-100">
+                            <h3><i class="bi bi-journal-check text-gold"></i> House rules</h3>
+                            <ul>
+                                <li>No smoking inside the cabin (allowed in designated outdoor areas).</li>
+                                <li>Pets are welcome; owners are responsible for any damage or extra cleaning.</li>
+                                <li>Use the wood-fired stove only under host supervision.</li>
+                                <li>For safety, always supervise children, especially near the pond.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="section-alt">
+            <div class="container-nature">
+                <div class="row gy-5">
+                    <div class="col-lg-4 reveal">
+                        <span class="eyebrow">Before you write us</span>
+                        <h2 class="section-title">Frequently asked questions</h2>
+                        <p class="section-lead">Quick answers about the stay and activities.</p>
+                    </div>
+                    <div class="col-lg-8 reveal">
+                        <div class="faq-item open">
+                            <button class="faq-q">Is there Wi-Fi or TV? <i class="bi bi-chevron-down"></i></button>
+                            <div class="faq-a"><p>No. We aim for a nature disconnect experience. Portable fans are provided.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-q">Are pets allowed? <i class="bi bi-chevron-down"></i></button>
+                            <div class="faq-a"><p>Yes, they are welcome. Let us know when booking; cleaning and furniture care rules may apply.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-q">Is the kitchen equipped? <i class="bi bi-chevron-down"></i></button>
+                            <div class="faq-a"><p>Yes. It has utensils, drinking water, microwave, refrigerator, small electric stove, pans, and a coffee maker. The outdoor wood-fired stove is used under supervision.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-q">Is there access to the pond? <i class="bi bi-chevron-down"></i></button>
+                            <div class="faq-a"><p>Yes, there is access via trail or dock. Please supervise children at all times.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-q">How do I book and pay? <i class="bi bi-chevron-down"></i></button>
+                            <div class="faq-a"><p>Request availability on our <a href="contact.html" class="text-gold fw-bold">booking page</a>. We coordinate confirmation and details over WhatsApp.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LOCATION -->
+        <section id="location">
+            <div class="container-nature">
+                <div class="section-head text-center reveal">
+                    <span class="eyebrow" style="justify-content:center;">How to get here</span>
+                    <h2 class="section-title">Location</h2>
+                    <p class="section-lead mx-auto">Find us in the heart of nature on the way to Tortuguero.</p>
+                </div>
+                <div class="row gy-4 reveal-stagger reveal">
+                    <div class="col-lg-5">
+                        <div class="card-nature location-card h-100">
+                            <h3><i class="bi bi-geo-alt-fill text-gold"></i> Address</h3>
+                            <p class="mb-3"><a href="https://www.google.com/maps/place/10°22'26.6%22N+83°43'35.4%22W/@10.3740556,-83.7268889,17z/data=!3m1!4b1!4m4!3m3!8m2!3d10.3740556!4d-83.7268889?entry=ttu" target="_blank" class="fw-bold text-gold">Limón, Pococí, Cariari</a></p>
+                            <p class="mb-4"><a href="https://www.google.com/maps/place/10°22'26.6%22N+83°43'35.4%22W/@10.3740556,-83.7268889,17z/data=!3m1!4b1!4m4!3m3!8m2!3d10.3740556!4d-83.7268889?entry=ttu" target="_blank" class="fw-bold text-gold">El Paso del Perezoso Cabin</a></p>
+                            <a href="https://www.google.com/maps/place/10°22'26.6%22N+83°43'35.4%22W/@10.3740556,-83.7268889,17z/data=!3m1!4b1!4m4!3m3!8m2!3d10.3740556!4d-83.7268889?entry=ttu" target="_blank" class="btn-primary-nature"><i class="bi bi-map"></i> Open in Google Maps</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="map-frame">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2235.6925265231675!2d-83.7272337190867!3d10.373949397918313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDIyJzI2LjYiTiA4M8KwNDMnMzUuNCJX!5e1!3m2!1sen!2scr!4v1770849034977!5m2!1sen!2scr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container-nature">
+            <div class="row align-items-center gy-3">
+                <div class="col-md-6 d-flex align-items-center gap-2">
+                    <img src="../assets/logo.png" alt="El Paso del Perezoso" style="height:38px;width:auto;">
+                    <span class="small">© 2025 El Paso del Perezoso. All rights reserved.</span>
+                </div>
+                <div class="col-md-6 text-md-end footer-links">
+                    <a href="#home">Home</a>·
+                    <a href="#features">The Cabin</a>·
+                    <a href="contact.html">Book</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a class="wa-fab" href="https://wa.me/50688834349" target="_blank" aria-label="Write on WhatsApp"><i class="bi bi-whatsapp"></i></a>
+    <button class="to-top" id="toTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+    <!-- MODALS / LIGHTBOX -->
+    <div class="modal fade" id="modalPlantaAlta" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content border-0"><div class="modal-header border-0"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+            <div class="modal-body p-0 position-relative">
+                <div id="lightboxPlantaAlta" class="carousel slide" data-bs-ride="false" data-bs-keyboard="true">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active"><img src="../img/cama1A.jpg" class="d-block w-100 zoomable" alt="Upper floor - bedroom bed 1" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/cama2A.jpg" class="d-block w-100 zoomable" alt="Upper floor - bedroom bed 2" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/pilaA.jpg" class="d-block w-100 zoomable" alt="Upper floor - bedroom details" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/2.jpg" class="d-block w-100 zoomable" alt="Upper floor - bathroom 1" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/5.jpg" class="d-block w-100 zoomable" alt="Upper floor - bathroom 2" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/7.jpg" class="d-block w-100 zoomable" alt="Upper floor - bathroom 3" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/9.jpg" class="d-block w-100 zoomable" alt="Upper floor - balcony 1" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/balconA.jpg" class="d-block w-100 zoomable" alt="Upper floor - balcony 2" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/1756493810569.jpg" class="d-block w-100 zoomable" alt="Upper floor - balcony 3" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/18.jpg" class="d-block w-100 zoomable" alt="Upper floor - balcony 4" loading="lazy"></div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#lightboxPlantaAlta" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#lightboxPlantaAlta" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+                </div>
+            </div></div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalPlantaBaja" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content border-0"><div class="modal-header border-0"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+            <div class="modal-body p-0 position-relative">
+                <div id="lightboxPlantaBaja" class="carousel slide" data-bs-ride="false" data-bs-keyboard="true">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active"><img src="../img/17.jpg" class="d-block w-100 zoomable" alt="Lower floor - bedroom 1" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/16.jpg" class="d-block w-100 zoomable" alt="Lower floor - bedroom 2" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/14.jpg" class="d-block w-100 zoomable" alt="Lower floor - bedroom 3" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/sala.jpg" class="d-block w-100 zoomable" alt="Lower floor - living room 1" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/sala2.jpg" class="d-block w-100 zoomable" alt="Lower floor - living room 2" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/sala3.jpg" class="d-block w-100 zoomable" alt="Lower floor - living room 3" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/sala4.jpg" class="d-block w-100 zoomable" alt="Lower floor - living room 4" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/6.jpg" class="d-block w-100 zoomable" alt="Lower floor - living room detail" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/Cocina.jpg" class="d-block w-100 zoomable" alt="Lower floor - kitchen" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/refri.jpg" class="d-block w-100 zoomable" alt="Lower floor - fridge" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/8.jpg" class="d-block w-100 zoomable" alt="Lower floor - bathroom 1" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/5.jpg" class="d-block w-100 zoomable" alt="Lower floor - bathroom 2" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/2.jpg" class="d-block w-100 zoomable" alt="Lower floor - bathroom 3" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/7.jpg" class="d-block w-100 zoomable" alt="Lower floor - bathroom 4" loading="lazy"></div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#lightboxPlantaBaja" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#lightboxPlantaBaja" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+                </div>
+            </div></div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalGaleria" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content border-0"><div class="modal-header border-0"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+            <div class="modal-body p-0 position-relative">
+                <div id="lightboxGaleria" class="carousel slide" data-bs-ride="false" data-bs-keyboard="true">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active"><img src="../img/jardinNoche.jpg" class="d-block w-100 zoomable" alt="Gallery 1" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/mesaA.jpg" class="d-block w-100 zoomable" alt="Gallery 2" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/1756493810569.jpg" class="d-block w-100 zoomable" alt="Gallery 3" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/1756493810603.jpg" class="d-block w-100 zoomable" alt="Gallery 4" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/1756431239857.jpg" class="d-block w-100 zoomable" alt="Gallery 5" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/hoja 5.jpg" class="d-block w-100 zoomable" alt="Gallery 6" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/perezoso.jpg" class="d-block w-100 zoomable" alt="Gallery 7" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/rana arbol.jpg" class="d-block w-100 zoomable" alt="Gallery 8" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/perezosoG.jpg" class="d-block w-100 zoomable" alt="Gallery 9" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/MONOCongo.jpg" class="d-block w-100 zoomable" alt="Gallery 10" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/AVE.jpg" class="d-block w-100 zoomable" alt="Gallery 11" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/Cherenga.jpg" class="d-block w-100 zoomable" alt="Gallery 12" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/basi.jpeg" class="d-block w-100 zoomable" alt="Gallery 13" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/ranaCafe.jpeg" class="d-block w-100 zoomable" alt="Gallery 14" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/ganzo.jpg" class="d-block w-100 zoomable" alt="Gallery 15" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/ganzos.jpg" class="d-block w-100 zoomable" alt="Gallery 16" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/patos.jpg" class="d-block w-100 zoomable" alt="Gallery 17" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/puenten.jpg" class="d-block w-100 zoomable" alt="Gallery 18" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/puente.jpg" class="d-block w-100 zoomable" alt="Gallery 19" loading="lazy"></div>
+                        <div class="carousel-item"><img src="../img/lagoGanzos.jpg" class="d-block w-100 zoomable" alt="Gallery 20" loading="lazy"></div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#lightboxGaleria" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#lightboxGaleria" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+                </div>
+            </div></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    (function(){
+        // Navbar solid on scroll
+        var nav = document.getElementById('mainNav');
+        var toTop = document.getElementById('toTop');
+        var trailFill = document.getElementById('trail-fill');
+        var trailMarker = document.getElementById('trailMarker');
+        function onScroll(){
+            var y = window.scrollY || document.documentElement.scrollTop;
+            nav.classList.toggle('scrolled', y > 40);
+            toTop.classList.toggle('show', y > 500);
+            var doc = document.documentElement;
+            var pct = y / (doc.scrollHeight - doc.clientHeight);
+            trailFill.style.width = (pct*100) + '%';
+            var railH = window.innerHeight - 40;
+            trailMarker.style.top = (20 + pct*railH) + 'px';
+        }
+        document.addEventListener('scroll', onScroll, {passive:true});
+        onScroll();
+        toTop.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+
+        // Mobile menu
+        var burger = document.getElementById('burgerBtn');
+        var panel = document.getElementById('mobilePanel');
+        burger.addEventListener('click', function(){
+            var open = panel.classList.toggle('open');
+            burger.classList.toggle('is-open', open);
+            burger.setAttribute('aria-expanded', open);
+        });
+        panel.querySelectorAll('[data-close]').forEach(function(a){
+            a.addEventListener('click', function(){
+                panel.classList.remove('open');
+                burger.classList.remove('is-open');
+            });
+        });
+
+        // Reveal on scroll
+        var revealEls = document.querySelectorAll('.reveal');
+        var io = new IntersectionObserver(function(entries){
+            entries.forEach(function(e){
+                if (e.isIntersecting){
+                    e.target.classList.add('is-visible');
+                    io.unobserve(e.target);
+                }
+            });
+        }, {threshold: 0.15});
+        revealEls.forEach(function(el){ io.observe(el); });
+
+        // Floor tabs
+        document.querySelectorAll('.floor-tab').forEach(function(btn){
+            btn.addEventListener('click', function(){
+                document.querySelectorAll('.floor-tab').forEach(function(b){ b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+                document.querySelectorAll('.floor-panel').forEach(function(p){ p.classList.remove('active'); });
+                btn.classList.add('active'); btn.setAttribute('aria-selected','true');
+                document.getElementById('panel-' + btn.dataset.floor).classList.add('active');
+            });
+        });
+
+        // Gallery filter
+        document.querySelectorAll('.filter-pill').forEach(function(pill){
+            pill.addEventListener('click', function(){
+                document.querySelectorAll('.filter-pill').forEach(function(p){ p.classList.remove('active'); });
+                pill.classList.add('active');
+                var f = pill.dataset.filter;
+                document.querySelectorAll('#galleryGrid .gallery-item').forEach(function(item){
+                    var show = (f === 'all' || item.dataset.cat === f);
+                    item.classList.toggle('hide', !show);
+                });
+            });
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-item').forEach(function(item){
+            var q = item.querySelector('.faq-q');
+            var a = item.querySelector('.faq-a');
+            if (item.classList.contains('open')) { a.style.maxHeight = a.scrollHeight + 'px'; }
+            q.addEventListener('click', function(){
+                var isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(function(o){
+                    o.classList.remove('open');
+                    o.querySelector('.faq-a').style.maxHeight = 0;
+                });
+                if (!isOpen){
+                    item.classList.add('open');
+                    a.style.maxHeight = a.scrollHeight + 'px';
+                }
+            });
+        });
+
+        // Lightbox: connect thumbnails with modal + carousel
+        document.querySelectorAll('.lightbox-trigger, .gallery-item, .floor-thumb').forEach(function(el){
+            el.addEventListener('click', function(){
+                var modalId = el.dataset.modal || 'modalGaleria';
+                var index = parseInt(el.dataset.index || '0', 10);
+                var modalEl = document.getElementById(modalId);
+                var carouselEl = modalEl.querySelector('.carousel');
+                var modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+                var carousel = bootstrap.Carousel.getOrCreateInstance(carouselEl);
+                modal.show();
+                setTimeout(function(){ carousel.to(index); }, 60);
+            });
+        });
+
+        // Zoom on lightbox images
+        document.querySelectorAll('.zoomable').forEach(function(img){
+            img.addEventListener('click', function(){ img.classList.toggle('zoomed'); });
+        });
+    })();
+    </script>
+</body>
 </html>
