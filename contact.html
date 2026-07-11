@@ -237,7 +237,7 @@
             <div class="row align-items-center gy-3">
                 <div class="col-md-6 d-flex align-items-center gap-2">
                     <img src="assets/logo.png" alt="El Paso del Perezoso" style="height:38px;width:auto;">
-                    <span class="small">© 2025 El Paso del Perezoso. Todos los derechos reservados.</span>
+                    <span class="small">© <span id="footerYear">2025</span> El Paso del Perezoso. Todos los derechos reservados.</span>
                 </div>
                 <div class="col-md-6 text-md-end footer-links">
                     <a href="index.html">Inicio</a>·
@@ -424,6 +424,10 @@ ${requests || 'Ninguna'}`;
             successMsg.classList.add('d-none');
         }, 4000);
     });
+
+    // Año actual en el footer
+    var footerYear = document.getElementById('footerYear');
+    if (footerYear) { footerYear.textContent = new Date().getFullYear(); }
     </script>
 </body>
 </html>
