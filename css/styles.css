@@ -72,9 +72,9 @@ a { color: inherit; text-decoration: none; }
 }
 .eyebrow::before {
   content: "";
-  width: 22px;
+  width: 28px;
   height: 1px;
-  background: var(--gold);
+  background: linear-gradient(90deg, var(--gold), transparent);
   display: inline-block;
 }
 
