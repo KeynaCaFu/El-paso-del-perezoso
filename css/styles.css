@@ -72,9 +72,9 @@ a { color: inherit; text-decoration: none; }
 }
 .eyebrow::before {
   content: "";
-  width: 22px;
+  width: 28px;
   height: 1px;
-  background: var(--gold);
+  background: linear-gradient(90deg, var(--gold), transparent);
   display: inline-block;
 }
 
@@ -288,7 +288,7 @@ h1, h2, h3, h4, .display-font {
 }
 @media (max-width: 991.98px) {
   .hero.hero-responsive {
-    background-image: url('../assets/fondoVertical.png') !important;
+    background-image: url('../assets/FONDOV.png') !important;
     background-size: cover;
     background-position: center top;
     background-color: var(--canopy-dark);
@@ -438,17 +438,129 @@ section { padding: 5rem 0; position: relative; }
   font-weight: 600;
   margin: 1.4rem 0 0.6rem;
 }
-.floor-thumb-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
-.floor-thumb {
-  aspect-ratio: 4/3;
-  border-radius: 12px;
+
+/* ============================================================
+   FOTOS DE CABAÑA Y PLANTAS - TAMAÑO GRANDE CUADRADO COMO GALERÍA
+   ============================================================ */
+
+/* --- Fotos de la cabaña (sección #fotos) --- */
+.photo-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+.photo-preview-grid .floor-thumb {
+  aspect-ratio: 1/1;
+  min-height: 220px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
   background-size: cover;
   background-position: center;
   cursor: zoom-in;
-  border: 1px solid var(--line);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
-.floor-thumb:hover { transform: scale(1.04); box-shadow: var(--shadow-soft); }
+.photo-preview-grid .floor-thumb:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-lift);
+}
+.photo-preview-grid .photo-thumb-wide {
+  grid-column: span 2;
+  min-height: 220px;
+}
+
+/* --- Planta baja y planta alta (sección #caracteristicas) --- */
+.floor-thumb-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+.floor-thumb-grid .floor-thumb {
+  aspect-ratio: 1/1;
+  min-height: 200px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background-size: cover;
+  background-position: center;
+  cursor: zoom-in;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.floor-thumb-grid .floor-thumb:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-lift);
+}
+
+/* --- Responsive --- */
+@media (max-width: 991px) {
+  .photo-preview-grid .photo-thumb-wide {
+    grid-column: span 1;
+  }
+  .photo-preview-grid .floor-thumb {
+    min-height: 200px;
+  }
+  .floor-thumb-grid .floor-thumb {
+    min-height: 180px;
+  }
+}
+
+@media (max-width: 767px) {
+  .photo-preview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .photo-preview-grid .floor-thumb {
+    min-height: 180px;
+  }
+  .floor-thumb-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .floor-thumb-grid .floor-thumb {
+    min-height: 170px;
+  }
+}
+
+@media (max-width: 575px) {
+  .photo-preview-grid .floor-thumb {
+    min-height: 160px;
+  }
+  .floor-thumb-grid .floor-thumb {
+    min-height: 150px;
+  }
+}
+
+/* --- Estilos de la tarjeta de introducción (NO CAMBIAR) --- */
+.photo-intro-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.9rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(251,250,243,0.96));
+}
+.photo-intro-title {
+  margin: 0;
+  font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+  color: var(--canopy-dark);
+}
+.photo-intro-text {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+.photo-intro-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.photo-intro-badges span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(124, 148, 115, 0.12);
+  color: var(--canopy-dark);
+  font-size: 0.82rem;
+  font-weight: 600;
+  border: 1px solid rgba(124, 148, 115, 0.2);
+}
 
 /* Galería */
 .filter-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem; }
