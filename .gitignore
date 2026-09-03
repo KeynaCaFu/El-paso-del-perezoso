@@ -1,0 +1,6 @@
+# dependencias (solo se usan en la rama next-migration)
+node_modules/
+
+# varios
+.DS_Store
+*.log
