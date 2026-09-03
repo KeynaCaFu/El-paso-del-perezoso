@@ -1,0 +1,148 @@
+/* Ajustes propios de la página de reserva (venían inline en contact.html). */
+body {
+  background: var(--paper);
+}
+.booking-hero {
+  padding: 8.5rem 0 3rem;
+  background: var(--canopy-dark);
+  color: #fff;
+  text-align: center;
+}
+.booking-hero .eyebrow {
+  justify-content: center;
+}
+.booking-hero h1 {
+  color: #fff;
+  font-size: clamp(1.9rem, 5vw, 2.8rem);
+  margin: 0.5rem 0 0.75rem;
+}
+.booking-hero p {
+  color: rgba(242, 241, 231, 0.78);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.steps-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.step-chip {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 0.55rem 1rem;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.step-chip b {
+  color: var(--gold-light);
+}
+
+.booking-wrap {
+  margin-top: -2.5rem;
+  padding-bottom: 5rem;
+}
+.booking-card {
+  padding: 2.25rem 1.5rem;
+}
+@media (min-width: 768px) {
+  .booking-card {
+    padding: 3rem;
+  }
+}
+
+.form-floating > label {
+  color: var(--ink-soft);
+}
+.form-control,
+.form-select {
+  border-radius: 12px;
+  border: 1.5px solid var(--line);
+  padding-top: 1.2rem;
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--canopy);
+  box-shadow: 0 0 0 0.2rem rgba(30, 58, 42, 0.15);
+}
+.form-floating {
+  margin-bottom: 1.1rem;
+}
+.form-control.is-invalid,
+.form-select.is-invalid {
+  border-color: #c0392b;
+}
+
+.btn-submit {
+  background: var(--gold);
+  color: var(--canopy-dark);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.95rem;
+  border-radius: 100px;
+  border: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 10px 26px rgba(199, 154, 62, 0.35);
+}
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(199, 154, 62, 0.45);
+}
+.btn-submit i {
+  margin-right: 0.5rem;
+}
+
+.success-box {
+  background: rgba(30, 58, 42, 0.08);
+  border: 1px solid rgba(30, 58, 42, 0.25);
+  color: var(--canopy-dark);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+}
+
+.side-note {
+  background: var(--canopy);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 2rem;
+  height: 100%;
+}
+.side-note h3 {
+  color: #fff;
+  font-size: 1.2rem;
+}
+.side-note ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0 0;
+}
+.side-note li {
+  display: flex;
+  gap: 0.65rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 0.92rem;
+}
+.side-note li:last-child {
+  border-bottom: none;
+}
+.side-note i {
+  color: var(--gold-light);
+  margin-top: 0.15rem;
+}
+.side-note a.wa-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  font-weight: 700;
+  color: var(--gold-light);
+}

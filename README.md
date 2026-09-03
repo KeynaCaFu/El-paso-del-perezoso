@@ -1,103 +1,73 @@
-# El Paso del Perezoso - Página de Alquiler de Cabaña
+# El Paso del Perezoso — sitio web (Next.js)
 
-Una hermosa página web para promocionar y gestionar las reservas de una cabaña completamente equipada en la naturaleza.
+Sitio de la cabaña **El Paso del Perezoso** (Pococí, Limón, Costa Rica).
 
-## Características de la Página
+> Esta rama (`next-migration`) es la migración del sitio estático original a
+> **Next.js** (App Router) con **exportación estática**. El sitio original en HTML
+> plano quedó guardado en [`legacy/`](legacy/) como referencia.
 
-### 🏠 Página Principal (index.html)
-- **Header Atractivo**: Presentación principal con información sobre la cabaña
-- **Tarjetas de Información**: Muestra las comodidades principales en el header
-- **Sección de Características**: Detalla las instalaciones en ambas plantas
-  - Planta Alta: Habitación grande con 3 camas, baño privado y terraza
-  - Planta Baja: Sala, cocina equipada y cuarto adicional
-- **Sección de Amenidades**: Muestra las atracciones disponibles
-  - Mini Granja
-  - Lago Privado
-  - Naturaleza y Senderismo
-  - WiFi
-  - Fogata
-  - Actividades al aire libre
-- **Galería de Fotos**: Sección visual de los espacios principales
-- **Navegación Intuitiva**: Acceso fácil a todas las secciones
+## Requisitos
 
-### 📅 Página de Reservas (contact.html)
-Formulario completo para solicitar reservas con campos para:
-- Nombre completo
-- Correo electrónico
-- Teléfono
-- Fecha de entrada
-- Fecha de salida
-- Número de huéspedes
-- Solicitudes especiales
+- Node.js 18.18+ (probado con Node 24)
+- npm
 
-El formulario incluye validación básica y mensaje de confirmación.
+## Empezar
 
-## Estructura de la Cabaña
-
-### Planta Alta
-- Habitación grande con 3 camas confortables
-- Baño privado
-- Terraza amplia con vistas
-
-### Planta Baja
-- Sala espaciosa
-- Cocina completa y equipada
-- Cuarto adicional
-- Acceso directo a terrazas
-
-## Amenidades Incluidas
-- Mini Granja con animales
-- Lago pequeño para actividades acuáticas
-- Conexión WiFi
-- Área de fogata
-- Senderos para caminatas
-- Zona para picnics
-
-## Cómo Personalizar
-
-1. **Imágenes**: Reemplaza las imágenes placeholder en la galería con fotos reales
-2. **Información de Contacto**: Actualiza el footer con tus datos
-3. **Precios**: Agrega información de tarifas
-4. **Email de Reservas**: Configura un servicio de email para recibir las solicitudes
-5. **Colores**: Personaliza los colores en el archivo CSS si lo deseas
-
-## Archivos Incluidos
-
-```
-├── index.html          - Página principal
-├── contact.html        - Página de reservas
-├── resume.html         - (Disponible para futuro uso)
-├── projects.html       - (Disponible para futuro uso)
-├── assets/
-│   ├── css/
-│   │   └── styles.css  - Estilos principales
-│   ├── js/
-│   │   └── scripts.js  - Scripts personalizados
-│   └── img/            - Carpeta para imágenes
-└── README.md           - Este archivo
+```bash
+npm install
+npm run dev
 ```
 
-## Tecnologías Utilizadas
+Abre <http://localhost:3000>.
 
-- **Bootstrap 5.2.3**: Framework CSS responsive
-- **Bootstrap Icons**: Iconografía
-- **Google Fonts**: Tipografía personalizada (Plus Jakarta Sans)
-- **JavaScript Vanilla**: Funcionalidad del formulario
+- `/` → inicio en español
+- `/en/` → inicio en inglés
+- `/contact/` y `/en/contact/` → formulario de reserva (WhatsApp)
 
-## Próximas Mejoras Sugeridas
+## Build de producción (estático)
 
-1. Integrar un sistema de pago para reservas en línea
-2. Agregar un calendario de disponibilidad
-3. Incluir galerías interactivas
-4. Agregar testimonios de huéspedes
-5. Integrar mapas con ubicación
-6. Agregar chat en vivo para consultas
-7. Sistema de administración para manejar reservas
+```bash
+npm run build
+```
 
-## Contacto
+Genera la carpeta `out/` con HTML/CSS/JS plano. Se puede subir tal cual a:
 
-Para más información sobre la cabaña "El Paso del Perezoso", contacta directamente a través del formulario de reservas.
+- **GitHub Pages** (copiar el contenido de `out/`)
+- **Vercel** / **Netlify** (detectan Next automáticamente)
+- Apache / XAMPP (servir `out/` como carpeta pública)
 
----
+## Estructura
 
-**¡Bienvenido a tu refugio perfecto!** 🏡🌳🦥
+```
+app/
+  layout.js            layout raíz: carga Bootstrap + /public/css/styles.css
+  page.js              inicio ES  -> <HomePage dict={es} />
+  contact/page.js      reserva ES -> <BookingPage />
+  en/page.js           inicio EN
+  en/contact/page.js   reserva EN
+components/
+  HomePage.jsx         estructura completa de la portada (server component)
+  BookingPage.jsx      página de reserva
+  BookingForm.jsx      formulario (client) — arma el mensaje de WhatsApp
+  SiteNav.jsx          navbar + menú móvil
+  SiteFooter.jsx       pie de página
+  SiteEffects.jsx      port del <script> original (scroll, tabs, filtros,
+                       acordeón FAQ, lightbox con Bootstrap)
+  Lightboxes.jsx       los 4 modales de carrusel
+lib/
+  dict.js              textos ES / EN de la portada
+  booking.js           textos ES / EN de la página de reserva
+  images.js            listas de imágenes y constantes (WhatsApp, Google Maps)
+public/
+  css/styles.css       hoja de estilos original (sin cambios)
+  img/  assets/        imágenes originales
+legacy/                sitio HTML anterior, congelado
+```
+
+## Pendiente (no incluido en este primer paso)
+
+- `<html lang>` sigue fijo en `es`; para SEO fino conviene un layout por idioma.
+- Migrar el CSS de `public/css/styles.css` a CSS Modules o Tailwind (hoy se usa
+  tal cual).
+- Reemplazar el lightbox de Bootstrap por un componente React propio (opcional).
+- Revisar el número de WhatsApp real en `lib/images.js` antes de publicar.

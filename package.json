@@ -1,0 +1,23 @@
+{
+  "name": "el-paso-del-perezoso",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitio de la cabaña El Paso del Perezoso (Pococí, Costa Rica) — migración a Next.js.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "export": "next build"
+  },
+  "dependencies": {
+    "bootstrap": "5.3.3",
+    "next": "^16.3.4",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "eslint": "9.36.0",
+    "eslint-config-next": "^16.3.4"
+  }
+}

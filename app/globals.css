@@ -1,0 +1,12 @@
+/* Estilos globales mínimos de Next.
+   El diseño real vive en /public/css/styles.css (cargado desde app/layout.js). */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
